@@ -113,7 +113,7 @@ export default function Footer({ onPageChange }: FooterProps) {
         aria-label="Contactar por WhatsApp"
       >
         <svg
-          className="w-7 h-7"
+          className="w-8 h-8"
           viewBox="0 0 55 55"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
