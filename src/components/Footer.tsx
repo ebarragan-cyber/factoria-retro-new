@@ -58,40 +58,40 @@ export default function Footer({ onPageChange }: FooterProps) {
           <div className="border-t border-slate-700 mt-8 pt-8">
             <div className="mb-8">
               <h3 className="text-lg font-semibold text-white mb-6 text-center">Patrocinadores</h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+              <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-5 items-center justify-items-center">
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/ACRISDECOR.png"
                     alt="Acrisdecor"
-                    className="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/GAME-PRESS.png"
                     alt="Game Press"
-                    className="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/IMG-20250915-WA0009.png"
                     alt="Patrocinador"
-                    className="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/JESUS-TOLEDO.png"
                     alt="Jesús Toledo Ebanistería"
-                    className="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/logo-alcorconhoy-negro.png"
                     alt="Alcorcón Hoy"
-                    className="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function Footer({ onPageChange }: FooterProps) {
         href="https://wa.me/34123456789"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center w-14 h-14"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center w-12 h-12 md:w-14 md:h-14"
         aria-label="Contactar por WhatsApp"
       >
         <svg

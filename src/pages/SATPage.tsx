@@ -122,7 +122,7 @@ export default function SATPage() {
         {/* Consolas que reparamos */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center text-white">Consolas que Reparamos</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
               'Nintendo NES', 'Super Nintendo', 'Nintendo 64', 'GameCube',
               'Sega Master System', 'Sega Genesis', 'Sega Saturn', 'Dreamcast',

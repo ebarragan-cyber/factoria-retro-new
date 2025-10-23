@@ -1,5 +1,18 @@
 import { useState } from 'react';
-import { ChevronDown, Calendar, Gift, Building, Image, Wrench } from 'lucide-react';
+import {
+  ChevronDown,
+  Calendar,
+  Gift,
+  Building,
+  Image,
+  Wrench,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Twitter
+} from 'lucide-react';
 
 interface NavbarProps {
   currentPage: string;
@@ -28,7 +41,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   return (
     <nav className="bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-16 relative pt-12 md:pt-0">
+        <div className="flex justify-between items-center h-16 md:h-16 relative">
 
           {/* Left Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -92,7 +105,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           </div>
 
           {/* Centered Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 -top-10 md:-top-10 z-10">
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -top-10 z-10">
             <img
               src="/Logo-factoria-retro.png"
               alt="Factoría Retro"
@@ -134,8 +147,22 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center justify-between w-full">
             <button
+              type="button"
+              onClick={() => handlePageChange('inicio')}
+              className="flex items-center text-white"
+            >
+              <img
+                src="/Logo-factoria-retro.png"
+                alt="Factoría Retro"
+                className="h-10 w-auto"
+              />
+              <span className="sr-only">Factoría Retro</span>
+            </button>
+            <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white hover:text-cyan-400 transition-colors"
+              aria-label="Abrir menú de navegación"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -207,6 +234,52 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
               >
                 Contacto
               </button>
+              <div className="mt-4 border-t border-slate-700 pt-4 space-y-3 text-sm text-slate-300">
+                <a
+                  href="tel:+34123456789"
+                  className="flex items-center gap-3 text-white hover:text-cyan-400 transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                  <span>+34 123 456 789</span>
+                </a>
+                <a
+                  href="mailto:info@factoriaretro.es"
+                  className="flex items-center gap-3 text-white hover:text-cyan-400 transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <span>info@factoriaretro.es</span>
+                </a>
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                  <span>Calle Retro Gaming, 123, Madrid</span>
+                </div>
+                <div className="pt-1">
+                  <p className="text-xs uppercase tracking-wide text-slate-400">Síguenos</p>
+                  <div className="mt-2 flex items-center gap-4 text-white">
+                    <a
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                      aria-label="Factoría Retro en Facebook"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                      aria-label="Factoría Retro en Instagram"
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                      aria-label="Factoría Retro en Twitter"
+                    >
+                      <Twitter className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
