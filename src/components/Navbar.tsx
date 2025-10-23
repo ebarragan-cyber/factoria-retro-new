@@ -41,10 +41,10 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   return (
     <nav className="bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-16 relative">
+        <div className="flex items-center h-16 md:h-16">
 
           {/* Left Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex md:flex-1 items-center space-x-8">
             <button 
               onClick={() => handlePageChange('inicio')}
               className={`transition-colors ${
@@ -105,17 +105,23 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           </div>
 
           {/* Centered Logo */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -top-10 z-10">
-            <img
-              src="/Logo-factoria-retro.png"
-              alt="Factoría Retro"
-              className="h-[60px] md:h-[80px] w-auto cursor-pointer"
+          <div className="hidden md:flex items-center justify-center">
+            <button
+              type="button"
               onClick={() => handlePageChange('inicio')}
-            />
+              className="cursor-pointer rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+            >
+              <img
+                src="/Logo-factoria-retro.png"
+                alt="Factoría Retro"
+                className="h-[80px] w-auto cursor-pointer"
+              />
+              <span className="sr-only">Factoría Retro</span>
+            </button>
           </div>
 
           {/* Right Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex md:flex-1 items-center justify-end space-x-8">
             <button 
               onClick={() => handlePageChange('entradas')}
               className={`transition-colors ${
