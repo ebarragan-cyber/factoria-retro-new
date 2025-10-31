@@ -58,40 +58,40 @@ export default function Footer({ onPageChange }: FooterProps) {
           <div className="border-t border-slate-700 mt-8 pt-8">
             <div className="mb-8">
               <h3 className="text-lg font-semibold text-white mb-6 text-center">Patrocinadores</h3>
-              <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-5 items-center justify-items-center">
+              <div className="grid grid-rows-2 grid-flow-col auto-cols-fr gap-4 sm:gap-6 md:grid-rows-1 md:grid-flow-row md:auto-cols-auto md:grid-cols-5 items-center justify-items-center">
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/ACRISDECOR.png"
                     alt="Acrisdecor"
-                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-9 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/GAME-PRESS.png"
                     alt="Game Press"
-                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-9 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/IMG-20250915-WA0009.png"
                     alt="Patrocinador"
-                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-9 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/JESUS-TOLEDO.png"
                     alt="Jesús Toledo Ebanistería"
-                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-9 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/logo-alcorconhoy-negro.png"
                     alt="Alcorcón Hoy"
-                    className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-9 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
               </div>
