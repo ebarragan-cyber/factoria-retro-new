@@ -11,7 +11,13 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  Twitter
+  Twitter,
+  Home,
+  BookOpen,
+  Landmark,
+  Ticket,
+  ShoppingBag,
+  MessageCircle
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -36,6 +42,15 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
     { id: 'alquiler', label: 'Alquiler', icon: Building },
     { id: 'exposiciones', label: 'Exposiciones', icon: Image },
     { id: 'sat', label: 'SAT', icon: Wrench }
+  ];
+
+  const primaryLinks = [
+    { id: 'inicio', label: 'Inicio', icon: Home },
+    { id: 'historia', label: 'Historia', icon: BookOpen },
+    { id: 'museo', label: 'Museo', icon: Landmark },
+    { id: 'entradas', label: 'Entradas', icon: Ticket },
+    { id: 'tienda', label: 'Tienda', icon: ShoppingBag },
+    { id: 'contacto', label: 'Contacto', icon: MessageCircle }
   ];
 
   return (
@@ -179,109 +194,116 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-800 rounded-lg mt-2">
-              <button
-                onClick={() => handlePageChange('inicio')}
-                className={`block w-full text-left px-3 py-2 transition-colors ${
-                  currentPage === 'inicio' ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
-                }`}
-              >
-                Inicio
-              </button>
-              {services.map(({ id, label }) => (
-                <button
-                  key={id}
-                  onClick={() => handlePageChange(id)}
-                  className={`block w-full text-left px-3 py-2 transition-colors ${
-                    currentPage === id ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
-              <button
-                onClick={() => handlePageChange('historia')}
-                className={`block w-full text-left px-3 py-2 transition-colors ${
-                  currentPage === 'historia' ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
-                }`}
-              >
-                Historia
-              </button>
-              <button
-                onClick={() => handlePageChange('museo')}
-                className={`block w-full text-left px-3 py-2 transition-colors ${
-                  currentPage === 'museo' ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
-                }`}
-              >
-                Museo
-              </button>
-              <button
-                onClick={() => handlePageChange('entradas')}
-                className={`block w-full text-left px-3 py-2 transition-colors ${
-                  currentPage === 'entradas' ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
-                }`}
-              >
-                Entradas
-              </button>
-              <button
-                onClick={() => handlePageChange('tienda')}
-                className={`block w-full text-left px-3 py-2 transition-colors ${
-                  currentPage === 'tienda' ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
-                }`}
-              >
-                Tienda
-              </button>
-              <button
-                onClick={() => handlePageChange('contacto')}
-                className={`block w-full text-left px-3 py-2 transition-colors ${
-                  currentPage === 'contacto' ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
-                }`}
-              >
-                Contacto
-              </button>
-              <div className="mt-4 border-t border-slate-700 pt-4 space-y-3 text-sm text-slate-300">
-                <a
-                  href="tel:+34123456789"
-                  className="flex items-center gap-3 text-white hover:text-cyan-400 transition-colors"
-                >
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <span>+34 123 456 789</span>
-                </a>
-                <a
-                  href="mailto:info@factoriaretro.es"
-                  className="flex items-center gap-3 text-white hover:text-cyan-400 transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-cyan-400" />
-                  <span>info@factoriaretro.es</span>
-                </a>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-cyan-400" />
-                  <span>Calle Retro Gaming, 123, Madrid</span>
+          <div className="md:hidden pb-6">
+            <div className="mt-3 rounded-2xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur">
+              <div className="px-5 pt-5 pb-4 border-b border-slate-800">
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Explora Factoría Retro</p>
+                <p className="mt-1 text-sm text-slate-300">
+                  Elige una sección para continuar y descubre todo lo que tenemos preparado para ti.
+                </p>
+              </div>
+
+              <div className="px-3 py-5 space-y-6">
+                <div>
+                  <p className="px-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">Navegación principal</p>
+                  <div className="mt-3 grid gap-2">
+                    {primaryLinks.map(({ id, label, icon: Icon }) => (
+                      <button
+                        key={id}
+                        onClick={() => handlePageChange(id)}
+                        className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors ${
+                          currentPage === id
+                            ? 'bg-slate-800/80 text-cyan-300 shadow-inner'
+                            : 'text-slate-200 hover:bg-slate-800/60 hover:text-cyan-200'
+                        }`}
+                      >
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <span className="text-sm font-medium">{label}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="pt-1">
-                  <p className="text-xs uppercase tracking-wide text-slate-400">Síguenos</p>
-                  <div className="mt-2 flex items-center gap-4 text-white">
+
+                <div>
+                  <p className="px-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">Nuestros servicios</p>
+                  <div className="mt-3 grid gap-2">
+                    {services.map(({ id, label, icon: Icon }) => (
+                      <button
+                        key={id}
+                        onClick={() => handlePageChange(id)}
+                        className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors ${
+                          currentPage === id
+                            ? 'bg-slate-800/80 text-cyan-300 shadow-inner'
+                            : 'text-slate-200 hover:bg-slate-800/60 hover:text-cyan-200'
+                        }`}
+                      >
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <span className="text-sm font-medium">{label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4 border-t border-slate-800 bg-slate-950/70 px-5 py-5 text-sm text-slate-200">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Contacto directo</p>
+                <div className="space-y-3">
+                  <a
+                    href="tel:+34123456789"
+                    className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                  >
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                      <Phone className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-medium">+34 123 456 789</span>
+                  </a>
+                  <a
+                    href="mailto:info@factoriaretro.es"
+                    className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                  >
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                      <Mail className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-medium">info@factoriaretro.es</span>
+                  </a>
+                  <div className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3">
+                    <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                      <MapPin className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-medium leading-relaxed text-slate-200">
+                      Calle Retro Gaming, 123
+                      <br />
+                      Madrid
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Síguenos</p>
+                  <div className="mt-3 flex items-center gap-3">
                     <a
                       href="#"
-                      className="hover:text-cyan-400 transition-colors"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
                       aria-label="Factoría Retro en Facebook"
                     >
-                      <Facebook className="w-5 h-5" />
+                      <Facebook className="h-5 w-5" />
                     </a>
                     <a
                       href="#"
-                      className="hover:text-cyan-400 transition-colors"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
                       aria-label="Factoría Retro en Instagram"
                     >
-                      <Instagram className="w-5 h-5" />
+                      <Instagram className="h-5 w-5" />
                     </a>
                     <a
                       href="#"
-                      className="hover:text-cyan-400 transition-colors"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
                       aria-label="Factoría Retro en Twitter"
                     >
-                      <Twitter className="w-5 h-5" />
+                      <Twitter className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
