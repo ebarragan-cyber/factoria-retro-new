@@ -23,7 +23,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Teléfono</h3>
-                  <p className="text-slate-300">+34 123 456 789</p>
+                  <p className="text-slate-300">+34 622 844 292</p>
                   <p className="text-slate-400 text-sm">Lun-Vie: 10:00-20:00</p>
                 </div>
               </div>
@@ -36,7 +36,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Email</h3>
-                  <p className="text-slate-300">info@factoriaretro.es</p>
+                  <p className="text-slate-300">mifactoriaretro@gmail.com</p>
                   <p className="text-slate-400 text-sm">Respuesta en 24h</p>
                 </div>
               </div>
