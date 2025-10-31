@@ -17,7 +17,7 @@ export default function TiendaPage() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">Categorías</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700 backdrop-blur-sm text-center cursor-pointer hover:border-cyan-500 transition-colors">
             <div className="text-3xl mb-2">🎮</div>
             <h3 className="text-base font-bold text-white">Consolas</h3>

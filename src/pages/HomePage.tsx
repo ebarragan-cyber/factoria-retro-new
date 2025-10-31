@@ -19,24 +19,24 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             FACTORÍA RETRO
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-slate-300">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-slate-300">
             El primer museo interactivo de videojuegos en España
           </p>
-          <p className="text-lg mb-12 text-slate-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg mb-12 text-slate-400 max-w-2xl mx-auto">
             Descubre la historia del gaming con recorridos virtuales, máquinas arcade originales y experiencias únicas que te transportarán a la edad dorada de los videojuegos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+            <button className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
               Comprar Entradas
             </button>
             <a
               href="https://my.matterport.com/show/?m=bNnPf2zbR67"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-bold py-4 px-8 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-bold py-4 px-8 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <span>🏛️</span>
               <span>Tour Virtual 360°</span>

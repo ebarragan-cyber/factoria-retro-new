@@ -299,7 +299,7 @@ export default function CumpleanosPage() {
             </div>
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-slate-300 mb-2">Extras Opcionales</label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {[
                   { id: 'tarta', label: 'Tarta personalizada (+30€)' },
                   { id: 'fotografia', label: 'Fotografía profesional (+50€)' },

@@ -87,7 +87,7 @@ export default function HistoriaPage() {
               Además, la asociación organiza torneos, competiciones, talleres temáticos y charlas impartidas por personalidades
               del sector del videojuego.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6">
               <div className="bg-slate-700/50 rounded-lg p-4 text-center">
                 <p className="text-cyan-400 font-bold text-3xl mb-1">40+</p>
                 <p className="text-slate-300 text-sm">Máquinas</p>
