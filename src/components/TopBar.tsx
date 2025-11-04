@@ -20,10 +20,15 @@ export default function TopBar() {
             <span className="break-words">info@factoriaretro.es</span>
           </a>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-2 text-center leading-tight sm:justify-start sm:text-left">
+        <a
+          href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-wrap items-center justify-center gap-2 text-center leading-tight hover:text-cyan-400 transition-colors sm:justify-start sm:text-left"
+        >
           <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
-          <span className="break-words">Calle Retro Gaming, 123, Madrid</span>
-        </div>
+          <span className="break-words">Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón</span>
+        </a>
       </div>
     </div>
   );

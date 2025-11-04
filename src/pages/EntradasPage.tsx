@@ -172,10 +172,16 @@ export default function EntradasPage() {
                   <Users className="w-6 h-6 text-green-400 flex-shrink-0" />
                   <div>
                     <h4 className="text-white font-semibold text-sm">Dirección</h4>
-                    <p className="text-slate-300 text-sm">Calle Retro Gaming, 123</p>
+                    <a
+                      href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-300 text-sm hover:text-cyan-300 transition-colors"
+                    >
+                      Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
+                    </a>
                   </div>
                 </div>
-                <p className="text-slate-400 text-xs ml-9">28001 Madrid, España</p>
               </div>
 
               <div className="bg-slate-700/50 rounded-lg p-4">
