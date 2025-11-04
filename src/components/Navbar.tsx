@@ -270,16 +270,19 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                     </span>
                     <span className="text-sm font-medium">info@factoriaretro.es</span>
                   </a>
-                  <div className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3">
+                  <a
+                    href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-left text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                  >
                     <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
                       <MapPin className="h-4 w-4" />
                     </span>
-                    <span className="text-sm font-medium leading-relaxed text-slate-200">
-                      Calle Retro Gaming, 123
-                      <br />
-                      Madrid
+                    <span className="text-sm font-medium leading-relaxed">
+                      Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
                     </span>
-                  </div>
+                  </a>
                 </div>
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Síguenos</p>

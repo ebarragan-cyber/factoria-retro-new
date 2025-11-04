@@ -49,8 +49,14 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Dirección</h3>
-                  <p className="text-slate-300">Calle Retro Gaming, 123</p>
-                  <p className="text-slate-300">28001 Madrid, España</p>
+                  <a
+                    href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-300 hover:text-cyan-300 transition-colors block"
+                  >
+                    Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
+                  </a>
                 </div>
               </div>
             </div>
@@ -189,7 +195,14 @@ export default function ContactoPage() {
             <div className="text-center">
               <MapPin className="w-16 h-16 text-slate-400 mx-auto mb-4" />
               <p className="text-slate-400">Mapa interactivo próximamente</p>
-              <p className="text-slate-500 text-sm mt-2">Calle Retro Gaming, 123 - Madrid</p>
+              <a
+                href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-500 text-sm mt-2 hover:text-cyan-300 transition-colors"
+              >
+                Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
+              </a>
             </div>
           </div>
           
