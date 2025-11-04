@@ -5,7 +5,6 @@ import {
   Trophy,
   Gift,
   Building,
-  Image,
   Wrench,
   Phone,
   Mail,
@@ -42,7 +41,6 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
     { id: 'torneos', label: 'Torneos', icon: Trophy },
     { id: 'cumpleanos', label: 'Cumpleaños', icon: Gift },
     { id: 'alquiler', label: 'Alquiler', icon: Building },
-    { id: 'exposiciones', label: 'Exposiciones', icon: Image },
     { id: 'sat', label: 'SAT', icon: Wrench }
   ];
 
