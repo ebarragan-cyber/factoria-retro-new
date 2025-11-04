@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calendar, Trophy, Users, Clock, Star, CheckCircle } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 export default function EventosPage() {
   const [formData, setFormData] = useState({
@@ -32,10 +32,10 @@ export default function EventosPage() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Eventos Especiales
+            EVENTOS
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Torneos de arcade, noches temáticas y eventos exclusivos para la comunidad gamer
+            Convierte cualquier lugar en un salón recreativo. Organizamos, transportamos y montamos todo para que disfrutes de un evento gamer único, donde y cuando quieras. Fácil, completo y exclusivo.
           </p>
         </div>
 
@@ -57,113 +57,30 @@ export default function EventosPage() {
         </div>
 
         {/* Descripción del Servicio */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
-            <div className="flex items-center mb-6">
-              <Trophy className="w-8 h-8 text-yellow-400 mr-3" />
-              <h3 className="text-2xl font-bold text-white">¿Qué Ofrecemos?</h3>
+        <div className="mb-16">
+          <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm max-w-4xl mx-auto">
+            <div className="flex items-center justify-center mb-8">
+              <Star className="w-10 h-10 text-purple-400 mr-3" />
+              <h3 className="text-3xl md:text-4xl font-bold text-white">Tipos de Eventos</h3>
             </div>
-            <div className="space-y-4 text-slate-300">
-              <p>
-                En Factoría Retro organizamos eventos únicos que combinan la nostalgia del gaming 
-                retro con la emoción de la competición moderna. Nuestros eventos están diseñados 
-                para jugadores de todos los niveles.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-cyan-400 mr-2" />
-                  Torneos oficiales con premios en efectivo
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-cyan-400 mr-2" />
-                  Noches temáticas por décadas
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-cyan-400 mr-2" />
-                  Eventos corporativos personalizados
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-cyan-400 mr-2" />
-                  Competiciones por equipos
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
-            <div className="flex items-center mb-6">
-              <Star className="w-8 h-8 text-purple-400 mr-3" />
-              <h3 className="text-2xl font-bold text-white">Tipos de Eventos</h3>
-            </div>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="border-l-4 border-cyan-400 pl-4">
-                <h4 className="font-semibold text-cyan-400 mb-2">Torneos Competitivos</h4>
+                <h4 className="font-semibold text-cyan-400 mb-2 text-lg">Torneos Competitivos</h4>
                 <p className="text-slate-300 text-sm">
-                  Street Fighter, King of Fighters, Tekken y más. Premios de hasta 500€.
+                  Street Fighter, King of Fighters, Tekken y más. Premios retro y dinamización profesional.
                 </p>
               </div>
               <div className="border-l-4 border-purple-400 pl-4">
-                <h4 className="font-semibold text-purple-400 mb-2">Noches Temáticas</h4>
+                <h4 className="font-semibold text-purple-400 mb-2 text-lg">Noches Temáticas</h4>
                 <p className="text-slate-300 text-sm">
-                  Eventos dedicados a los 80s, 90s, Nintendo, Sega y franquicias específicas.
+                  Eventos dedicados a los 80s, 90s, Nintendo, Sega y franquicias icónicas.
                 </p>
               </div>
               <div className="border-l-4 border-pink-400 pl-4">
-                <h4 className="font-semibold text-pink-400 mb-2">Eventos Corporativos</h4>
+                <h4 className="font-semibold text-pink-400 mb-2 text-lg">Eventos Corporativos</h4>
                 <p className="text-slate-300 text-sm">
-                  Team building, presentaciones de productos y celebraciones empresariales.
+                  Team building, presentaciones de producto y celebraciones empresariales inolvidables.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Próximos Eventos */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white">Próximos Eventos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 backdrop-blur-sm">
-              <div className="flex items-center mb-4">
-                <Calendar className="w-6 h-6 text-cyan-400 mr-2" />
-                <span className="text-cyan-400 font-semibold">15 Enero 2024</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Torneo Street Fighter II</h3>
-              <p className="text-slate-300 mb-4 text-sm">
-                Competición oficial con premios en efectivo. Inscripciones abiertas.
-              </p>
-              <div className="flex items-center justify-between text-sm text-slate-400">
-                <span className="flex items-center"><Users className="w-4 h-4 mr-1" /> 32 jugadores</span>
-                <span className="flex items-center"><Clock className="w-4 h-4 mr-1" /> 18:00h</span>
-              </div>
-            </div>
-
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 backdrop-blur-sm">
-              <div className="flex items-center mb-4">
-                <Calendar className="w-6 h-6 text-purple-400 mr-2" />
-                <span className="text-purple-400 font-semibold">22 Enero 2024</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Noche Retro 80s</h3>
-              <p className="text-slate-300 mb-4 text-sm">
-                Una noche dedicada a los clásicos de los 80. Música y ambiente retro.
-              </p>
-              <div className="flex items-center justify-between text-sm text-slate-400">
-                <span className="flex items-center"><Users className="w-4 h-4 mr-1" /> Sin límite</span>
-                <span className="flex items-center"><Clock className="w-4 h-4 mr-1" /> 20:00h</span>
-              </div>
-            </div>
-
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 backdrop-blur-sm">
-              <div className="flex items-center mb-4">
-                <Calendar className="w-6 h-6 text-pink-400 mr-2" />
-                <span className="text-pink-400 font-semibold">5 Febrero 2024</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Campeonato Pac-Man</h3>
-              <p className="text-slate-300 mb-4 text-sm">
-                Competición por la puntuación más alta en el clásico come-cocos.
-              </p>
-              <div className="flex items-center justify-between text-sm text-slate-400">
-                <span className="flex items-center"><Users className="w-4 h-4 mr-1" /> Abierto</span>
-                <span className="flex items-center"><Clock className="w-4 h-4 mr-1" /> 16:00h</span>
               </div>
             </div>
           </div>
