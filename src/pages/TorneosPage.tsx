@@ -11,47 +11,6 @@ type Tournament = {
   gallery?: { src: string; alt: string }[];
 };
 
-const createPoster = (
-  title: string | string[],
-  subtitle: string | string[],
-  options?: { gradientFrom?: string; gradientTo?: string; footer?: string },
-) => {
-  const { gradientFrom = '#f97316', gradientTo = '#ef4444', footer = 'Factoría Retro' } = options ?? {};
-  const titleLines = Array.isArray(title) ? title : `${title}`.split('\n');
-  const subtitleLines = Array.isArray(subtitle) ? subtitle : `${subtitle}`.split('\n');
-
-  const titleText = titleLines
-    .map((line, index) => `<tspan x="120" dy="${index === 0 ? 0 : 68}">${line}</tspan>`)
-    .join('');
-  const subtitleText = subtitleLines
-    .map((line, index) => `<tspan x="120" dy="${index === 0 ? 0 : 48}">${line}</tspan>`)
-    .join('');
-
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="${gradientFrom}" />
-          <stop offset="100%" stop-color="${gradientTo}" />
-        </linearGradient>
-      </defs>
-      <rect width="1200" height="675" fill="#0f172a" />
-      <rect x="60" y="60" width="1080" height="555" rx="48" fill="url(#grad)" opacity="0.92" />
-      <text x="120" y="220" font-family="'Inter', 'Arial', sans-serif" font-size="64" fill="#f8fafc" font-weight="700">
-        ${titleText}
-      </text>
-      <text x="120" y="420" font-family="'Inter', 'Arial', sans-serif" font-size="36" fill="#f8fafc" font-weight="500">
-        ${subtitleText}
-      </text>
-      <text x="120" y="520" font-family="'Inter', 'Arial', sans-serif" font-size="28" fill="#facc15" font-weight="600">
-        ${footer}
-      </text>
-    </svg>
-  `;
-
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-};
-
 const archivedTournaments: Tournament[] = [
   {
     title: 'EL ESPERADO SEGUNDO TORNEO DE FUTBOLÍN YA ESTÁ AQUÍ',
@@ -59,14 +18,9 @@ const archivedTournaments: Tournament[] = [
     description: [
       'Apúntate el próximo sábado 27 de septiembre a las 7 para intentar ser el ganador de este torneo con la máquina que todos amamos y jugábamos. Recuerda esos buenos momentos aquí, en Factoría Retro. ¡Inscripción gratuita con la compra de tu entrada!',
     ],
-    image: createPoster(['II TORNEO DE FUTBOLÍN', 'FACTORÍA RETRO'], '27 de septiembre · 19:00 h', {
-      gradientFrom: '#22d3ee',
-      gradientTo: '#3b82f6',
-      footer: 'Inscripción gratuita con tu entrada',
-    }),
+    image: 'public\eventos-img\torneo-futbolin-2.jpeg',
     imageAlt: 'Cartel promocional del segundo torneo de futbolín de Factoría Retro',
     location: 'Factoría Retro, Alcorcón',
-    link: 'https://factoriaretro.com/el-esperado-segundo-torneo-de-futbolin-ya-esta-aqui/',
   },
   {
     title: 'NUEVA MAQUINA TOTEM 4 PLAYERS',
@@ -76,36 +30,20 @@ const archivedTournaments: Tournament[] = [
       'Es un beat’em basado en el cómic Xenozoic Tales creado por Marck Schultz durante finales de la década de 1980. Tras el estreno de este videojuego se produjo una serie de televisión vinculada.',
       'Además el videojuego de Capcom no tiene ninguna relación con dicha serie, ya que se basa enteramente en los cómics.',
     ],
-    image: createPoster('MÁQUINA TOTEM 4 PLAYERS', 'Cadillacs & Dinosaurs llega a Factoría Retro', {
-      gradientFrom: '#9333ea',
-      gradientTo: '#f472b6',
-      footer: 'Experiencia arcade para 4 jugadores',
-    }),
+    image: 'public\eventos-img\maquina-totem-4.jpeg',
     imageAlt: 'Máquina arcade TOTEM 4 players en Factoría Retro',
     location: 'Factoría Retro, Alcorcón',
     gallery: [
       {
-        src: createPoster('Galería TOTEM 4', 'Pantalla principal', {
-          gradientFrom: '#f472b6',
-          gradientTo: '#fb7185',
-          footer: 'Cadillacs & Dinosaurs',
-        }),
+        src: 'public\eventos-img\maquina-totem-4-1.jpeg',
         alt: 'Pantalla del videojuego Cadillacs and Dinosaurs en la máquina TOTEM 4 players',
       },
       {
-        src: createPoster('Galería TOTEM 4', 'Marcadores clásicos', {
-          gradientFrom: '#22d3ee',
-          gradientTo: '#0ea5e9',
-          footer: 'High scores retro',
-        }),
+        src: 'public\eventos-img\maquina-totem-4-2.jpeg',
         alt: 'Marcadores clásicos del videojuego Cadillacs and Dinosaurs en Factoría Retro',
       },
       {
-        src: createPoster('Galería TOTEM 4', 'Cabinet original', {
-          gradientFrom: '#f97316',
-          gradientTo: '#fb7185',
-          footer: 'Red Bull corner',
-        }),
+        src: 'public\eventos-img\maquina-totem-4-3.jpeg',
         alt: 'Cabina completa de la máquina TOTEM 4 players en Factoría Retro',
       },
     ],
@@ -117,11 +55,7 @@ const archivedTournaments: Tournament[] = [
       'Prepárate para combates intensos, risas aseguradas y una buena dosis de nostalgia pixelada.',
       'Si crees que tienes lo que hace falta para ser el mejor, ¡ven a demostrarlo! Habrá trofeos para los ganadores. Diversión garantizada para todos. ¡Ambiente retro, comunidad brutal y pura pasión por los videojuegos! ¡No importa si eres un…',
     ],
-    image: createPoster("TORNEO KOF '98", 'Trofeos y mucha nostalgia retro', {
-      gradientFrom: '#f97316',
-      gradientTo: '#ef4444',
-      footer: '22 de junio de 2025',
-    }),
+    image: 'public\eventos-img\torneo-the-king.jpg',
     imageAlt: 'Cartel del primer torneo de The King of Fighters 98',
     location: 'Factoría Retro, Alcorcón',
   },
@@ -131,11 +65,7 @@ const archivedTournaments: Tournament[] = [
     description: [
       'Como ya es verano tenemos un horario especial para que podáis disfrutar más días jugando.',
     ],
-    image: createPoster('HORARIO DE VERANO', 'Más días para jugar en Factoría Retro', {
-      gradientFrom: '#facc15',
-      gradientTo: '#fb923c',
-      footer: 'Vive el museo arcade',
-    }),
+    image: 'public\eventos-img\nuevo-horario.jpg',
     imageAlt: 'Anuncio del horario de verano en Factoría Retro',
     location: 'Factoría Retro, Alcorcón',
   },
@@ -151,11 +81,7 @@ const archivedTournaments: Tournament[] = [
       'Trae a tus amigos, elige tu personaje y…',
       '¡LUCHA!',
     ],
-    image: createPoster(['STREET FIGHTER II', 'CHAMPION EDITION'], 'Torneo arcade con premios para los mejores', {
-      gradientFrom: '#f97316',
-      gradientTo: '#f43f5e',
-      footer: '22 de junio · 19:30 h',
-    }),
+    image: 'public\eventos-img\torneo-street.jpeg',
     imageAlt: 'Cartel del torneo de Street Fighter II Champion Edition',
     location: 'Factoría Retro, Alcorcón',
   },
