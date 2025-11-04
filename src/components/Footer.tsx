@@ -109,6 +109,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <h3 className="text-lg font-semibold text-white mb-4">Servicios</h3>
               <ul className="space-y-2">
                 <li><button onClick={() => onPageChange('eventos')} className="text-slate-400 hover:text-cyan-400 transition-colors">Eventos</button></li>
+                <li><button onClick={() => onPageChange('torneos')} className="text-slate-400 hover:text-cyan-400 transition-colors">Torneos</button></li>
                 <li><button onClick={() => onPageChange('cumpleanos')} className="text-slate-400 hover:text-cyan-400 transition-colors">Cumpleaños</button></li>
                 <li><button onClick={() => onPageChange('alquiler')} className="text-slate-400 hover:text-cyan-400 transition-colors">Alquiler</button></li>
                 <li><button onClick={() => onPageChange('tienda')} className="text-slate-400 hover:text-cyan-400 transition-colors">Tienda</button></li>

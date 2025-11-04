@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {
   ChevronDown,
   Calendar,
+  Trophy,
   Gift,
   Building,
   Image,
@@ -38,6 +39,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
 
   const services = [
     { id: 'eventos', label: 'Eventos', icon: Calendar },
+    { id: 'torneos', label: 'Torneos', icon: Trophy },
     { id: 'cumpleanos', label: 'Cumpleaños', icon: Gift },
     { id: 'alquiler', label: 'Alquiler', icon: Building },
     { id: 'exposiciones', label: 'Exposiciones', icon: Image },
