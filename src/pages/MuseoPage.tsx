@@ -16,10 +16,9 @@ export default function MuseoPage() {
         <div className="space-y-12">
           <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
             <p className="text-lg text-slate-300 leading-relaxed">
-              Bienvenidos a nuestra cápsula del tiempo del entretenimiento digital. En Factoría Retro no solo celebramos
-              la magia de las máquinas arcade, preservamos el legado de los videojuegos: desde las primeras consolas
-              domésticas de los años 70 hasta las joyas tecnológicas de los 90. Cada pieza de nuestra colección ha sido
-              restaurada con cariño para que te sumerjas en la época dorada del gaming.
+              Embarcarse en un viaje por la historia del videojuego es adentrarse en una de las aventuras tecnológicas y
+              culturales más fascinantes del último siglo. Desde sus humildes comienzos en laboratorios universitarios y
+              salas recreativas hasta convertirse en una de las industrias del entretenimiento más influyentes del planeta.
             </p>
           </div>
 
@@ -42,44 +41,12 @@ export default function MuseoPage() {
               <Gamepad2 className="w-8 h-8 text-purple-400 mr-3" />
               <h2 className="text-3xl font-bold text-white">Un museo vivo: juega la historia</h2>
             </div>
-            <p className="text-lg text-slate-300 leading-relaxed mb-6">
+            <p className="text-lg text-slate-300 leading-relaxed">
               En nuestro museo no solo verás historia, ¡la jugarás! Muchas de las consolas y recreativas están en funcionamiento
               para que experimentes en primera persona la evolución de los videojuegos: prueba una consola de Atari, reta a tus
               amigos en un duelo de Street Fighter o revive las hazañas de Mario mientras busca salvar a la princesa. Cada pantalla
               es un portal al pasado, listo para revivir emociones y anécdotas.
             </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-slate-700/50 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-cyan-400">Máquinas Arcade</h3>
-                <ul className="text-slate-300 text-sm space-y-2">
-                  <li>• Street Fighter</li>
-                  <li>• Pac-Man</li>
-                  <li>• Metal Slug</li>
-                  <li>• Donkey Kong</li>
-                </ul>
-              </div>
-
-              <div className="bg-slate-700/50 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-purple-400">Consolas Clásicas</h3>
-                <ul className="text-slate-300 text-sm space-y-2">
-                  <li>• Atari 2600</li>
-                  <li>• Nintendo NES</li>
-                  <li>• Sega Genesis</li>
-                  <li>• PlayStation</li>
-                </ul>
-              </div>
-
-              <div className="bg-slate-700/50 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-pink-400">Pinballs</h3>
-                <ul className="text-slate-300 text-sm space-y-2">
-                  <li>• Juegos clásicos</li>
-                  <li>• Máquinas restauradas</li>
-                  <li>• Experiencia original</li>
-                  <li>• Todas las épocas</li>
-                </ul>
-              </div>
-            </div>
           </div>
 
           <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
