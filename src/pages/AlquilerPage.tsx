@@ -44,15 +44,15 @@ export default function AlquilerPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {[
             {
-              src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
+              src: 'public/alquiler-maquina-01.jpg',
               alt: 'Arcade clásico iluminado con luces de neón'
             },
             {
-              src: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80',
+              src: 'public/alquiler-maquina-02.jpg',
               alt: 'Detalle de joystick arcade retro'
             },
             {
-              src: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80',
+              src: 'public/alquiler-maquina-03.jpg',
               alt: 'Fila de recreativas preparadas para alquiler'
             }
           ].map(({ src, alt }) => (
