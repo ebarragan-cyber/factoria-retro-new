@@ -166,24 +166,25 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center justify-between w-full">
+          <div className="md:hidden flex items-center justify-between w-full py-2">
             <button
               type="button"
               onClick={() => handlePageChange('inicio')}
-              className="flex items-center text-white"
+              className="flex items-center gap-3 text-white"
             >
               <img
                 src="/Logo-factoria-retro.png"
                 alt="Factoría Retro"
-                className="h-10 w-auto"
+                className="h-14 w-auto drop-shadow-lg"
               />
               <span className="sr-only">Factoría Retro</span>
             </button>
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-cyan-400 transition-colors"
+              className="rounded-full border border-slate-700/60 bg-slate-800/70 p-2 text-white transition-colors hover:border-cyan-400 hover:text-cyan-300"
               aria-label="Abrir menú de navegación"
+              aria-expanded={isMenuOpen}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -194,120 +195,131 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-6">
-            <div className="mt-3 rounded-2xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur">
-              <div className="px-5 pt-5 pb-4 border-b border-slate-800">
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Explora Factoría Retro</p>
-                <p className="mt-1 text-sm text-slate-300">
-                  Elige una sección para continuar y descubre todo lo que tenemos preparado para ti.
-                </p>
-              </div>
+          <div className="md:hidden">
+            <div
+              className="fixed inset-0 z-40 bg-slate-950/70 backdrop-blur-sm"
+              onClick={() => setIsMenuOpen(false)}
+              aria-hidden="true"
+            />
+            <div className="fixed inset-x-0 top-[64px] z-50 px-4 pb-6">
+              <div className="mx-auto max-w-7xl">
+                <div className="rounded-2xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur overflow-hidden">
+                  <div className="max-h-[calc(100vh-120px)] overflow-y-auto">
+                    <div className="px-5 pt-5 pb-4 border-b border-slate-800">
+                      <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Explora Factoría Retro</p>
+                      <p className="mt-1 text-sm text-slate-300">
+                        Elige una sección para continuar y descubre todo lo que tenemos preparado para ti.
+                      </p>
+                    </div>
 
-              <div className="px-3 py-5 space-y-6">
-                <div>
-                  <p className="px-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">Navegación principal</p>
-                  <div className="mt-3 grid gap-2">
-                    {primaryLinks.map(({ id, label, icon: Icon }) => (
-                      <button
-                        key={id}
-                        onClick={() => handlePageChange(id)}
-                        className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors ${
-                          currentPage === id
-                            ? 'bg-slate-800/80 text-cyan-300 shadow-inner'
-                            : 'text-slate-200 hover:bg-slate-800/60 hover:text-cyan-200'
-                        }`}
-                      >
-                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
-                          <Icon className="h-4 w-4" />
-                        </span>
-                        <span className="text-sm font-medium">{label}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
+                    <div className="px-3 py-5 space-y-6">
+                      <div>
+                        <p className="px-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">Navegación principal</p>
+                        <div className="mt-3 grid gap-2">
+                          {primaryLinks.map(({ id, label, icon: Icon }) => (
+                            <button
+                              key={id}
+                              onClick={() => handlePageChange(id)}
+                              className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors ${
+                                currentPage === id
+                                  ? 'bg-slate-800/80 text-cyan-300 shadow-inner'
+                                  : 'text-slate-200 hover:bg-slate-800/60 hover:text-cyan-200'
+                              }`}
+                            >
+                              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                                <Icon className="h-4 w-4" />
+                              </span>
+                              <span className="text-sm font-medium">{label}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
 
-                <div>
-                  <p className="px-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">Nuestros servicios</p>
-                  <div className="mt-3 grid gap-2">
-                    {services.map(({ id, label, icon: Icon }) => (
-                      <button
-                        key={id}
-                        onClick={() => handlePageChange(id)}
-                        className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors ${
-                          currentPage === id
-                            ? 'bg-slate-800/80 text-cyan-300 shadow-inner'
-                            : 'text-slate-200 hover:bg-slate-800/60 hover:text-cyan-200'
-                        }`}
-                      >
-                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
-                          <Icon className="h-4 w-4" />
-                        </span>
-                        <span className="text-sm font-medium">{label}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                      <div>
+                        <p className="px-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">Nuestros servicios</p>
+                        <div className="mt-3 grid gap-2">
+                          {services.map(({ id, label, icon: Icon }) => (
+                            <button
+                              key={id}
+                              onClick={() => handlePageChange(id)}
+                              className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors ${
+                                currentPage === id
+                                  ? 'bg-slate-800/80 text-cyan-300 shadow-inner'
+                                  : 'text-slate-200 hover:bg-slate-800/60 hover:text-cyan-200'
+                              }`}
+                            >
+                              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                                <Icon className="h-4 w-4" />
+                              </span>
+                              <span className="text-sm font-medium">{label}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
 
-              <div className="space-y-4 border-t border-slate-800 bg-slate-950/70 px-5 py-5 text-sm text-slate-200">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Contacto directo</p>
-                <div className="space-y-3">
-                  <a
-                    href="tel:+34123456789"
-                    className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
-                  >
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
-                      <Phone className="h-4 w-4" />
-                    </span>
-                    <span className="text-sm font-medium">+34 123 456 789</span>
-                  </a>
-                  <a
-                    href="mailto:info@factoriaretro.es"
-                    className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
-                  >
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
-                      <Mail className="h-4 w-4" />
-                    </span>
-                    <span className="text-sm font-medium">info@factoriaretro.es</span>
-                  </a>
-                  <a
-                    href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-left text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
-                  >
-                    <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
-                      <MapPin className="h-4 w-4" />
-                    </span>
-                    <span className="text-sm font-medium leading-relaxed">
-                      Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
-                    </span>
-                  </a>
-                </div>
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Síguenos</p>
-                  <div className="mt-3 flex items-center gap-3">
-                    <a
-                      href="#"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
-                      aria-label="Factoría Retro en Facebook"
-                    >
-                      <Facebook className="h-5 w-5" />
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
-                      aria-label="Factoría Retro en Instagram"
-                    >
-                      <Instagram className="h-5 w-5" />
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
-                      aria-label="Factoría Retro en Twitter"
-                    >
-                      <Twitter className="h-5 w-5" />
-                    </a>
+                    <div className="space-y-4 border-t border-slate-800 bg-slate-950/70 px-5 py-5 text-sm text-slate-200">
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Contacto directo</p>
+                      <div className="space-y-3">
+                        <a
+                          href="tel:+34123456789"
+                          className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                        >
+                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                            <Phone className="h-4 w-4" />
+                          </span>
+                          <span className="text-sm font-medium">+34 123 456 789</span>
+                        </a>
+                        <a
+                          href="mailto:info@factoriaretro.es"
+                          className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                        >
+                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                            <Mail className="h-4 w-4" />
+                          </span>
+                          <span className="text-sm font-medium">info@factoriaretro.es</span>
+                        </a>
+                        <a
+                          href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-left text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                        >
+                          <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
+                            <MapPin className="h-4 w-4" />
+                          </span>
+                          <span className="text-sm font-medium leading-relaxed">
+                            Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
+                          </span>
+                        </a>
+                      </div>
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Síguenos</p>
+                        <div className="mt-3 flex items-center gap-3">
+                          <a
+                            href="#"
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                            aria-label="Factoría Retro en Facebook"
+                          >
+                            <Facebook className="h-5 w-5" />
+                          </a>
+                          <a
+                            href="#"
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                            aria-label="Factoría Retro en Instagram"
+                          >
+                            <Instagram className="h-5 w-5" />
+                          </a>
+                          <a
+                            href="#"
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-white transition-colors hover:border-cyan-400 hover:text-cyan-200"
+                            aria-label="Factoría Retro en Twitter"
+                          >
+                            <Twitter className="h-5 w-5" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
