@@ -1,4 +1,6 @@
 
+import { PlayCircle } from 'lucide-react';
+
 export default function HomePage() {
   return (
     <>
@@ -88,6 +90,35 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Recorrido Virtual 360°</h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Sumérgete en Factoria Retro desde cualquier dispositivo con nuestro tour interactivo.
+            </p>
+          </div>
+          <a
+            href="https://my.matterport.com/show/?m=bNnPf2zbR67"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block group aspect-video w-full rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900/60"
+          >
+            <img
+              src="public/video-360.jpg"
+              alt="Vista interior del museo Factoria Retro"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-slate-900/40 transition-colors duration-300 group-hover:bg-slate-900/20"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+              <PlayCircle className="w-20 h-20 drop-shadow-lg transition-transform duration-300 group-hover:scale-110" />
+              <span className="mt-4 text-lg font-semibold tracking-wide">Explorar recorrido virtual</span>
+            </div>
+          </a>
         </div>
       </section>
 

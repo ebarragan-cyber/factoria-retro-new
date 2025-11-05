@@ -10,10 +10,18 @@ interface TicketOption {
 }
 
 const TICKET_OPTIONS: TicketOption[] = [
-  { id: 'general', name: 'Entrada General', price: 21, description: 'Acceso completo' },
-  { id: 'reducida', name: 'Entrada Reducida', price: 16, description: '5-13 años, +65, discapacidad' },
-  { id: 'familiar', name: 'Pack Familiar', price: 70, description: '2 adultos + 2 niños' },
-  { id: 'menor', name: 'Menor de 5 años', price: 0, description: 'Gratis' }
+  {
+    id: 'general',
+    name: 'Entrada general',
+    price: 10,
+    description: 'Acceso al museo durante el turno elegido'
+  },
+  {
+    id: 'dia-completo',
+    name: 'Pase del día completo',
+    price: 15,
+    description: 'Acceso ilimitado durante todas las sesiones del día'
+  }
 ];
 
 export default function TicketPurchaseForm() {
