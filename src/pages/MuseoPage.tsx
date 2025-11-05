@@ -76,7 +76,7 @@ export default function MuseoPage() {
               className="relative block group aspect-video w-full rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900/60"
             >
               <img
-                src="/alquiler-maquina-02.jpg"
+                src="public/video-360.jpg"
                 alt="Vista interior del museo Factoria Retro"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
