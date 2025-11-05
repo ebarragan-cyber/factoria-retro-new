@@ -24,7 +24,13 @@ export default function ContactoPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-white">Teléfono</h3>
                   <p className="text-slate-300">+34 622 844 292</p>
-                  <p className="text-slate-400 text-sm">Lun-Vie: 10:00-20:00</p>
+                  <p className="text-slate-400 text-sm">
+                    Viernes: 18:00-22:00
+                    <br />
+                    Sábado: 11:00-15:00 y 18:00-22:00
+                    <br />
+                    Domingo: 11:00-15:00 y 17:00-21:00
+                  </p>
                 </div>
               </div>
             </div>
@@ -84,16 +90,16 @@ export default function ContactoPage() {
               </div>
               <div className="space-y-2 text-slate-300">
                 <div className="flex justify-between">
-                  <span>Lunes - Viernes:</span>
-                  <span>10:00 - 20:00</span>
+                  <span>Viernes:</span>
+                  <span>18:00 - 22:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sábados:</span>
-                  <span>10:00 - 22:00</span>
+                  <span>11:00 - 15:00 y 18:00 - 22:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Domingos:</span>
-                  <span>12:00 - 20:00</span>
+                  <span>11:00 - 15:00 y 17:00 - 21:00</span>
                 </div>
                 <div className="flex justify-between text-slate-400">
                   <span>Festivos:</span>

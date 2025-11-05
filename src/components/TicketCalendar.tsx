@@ -157,9 +157,9 @@ export default function TicketCalendar({ onDateTimeSelect }: TicketCalendarProps
           <div className="mt-4 p-3 bg-slate-700/50 rounded-lg">
             <h5 className="text-white font-semibold mb-1.5 text-xs">Horarios:</h5>
             <div className="text-slate-300 text-xs space-y-0.5">
-              <p>Lunes - Viernes: 10:00 - 20:00</p>
-              <p>Sábados: 10:00 - 22:00</p>
-              <p>Domingos: 12:00 - 20:00</p>
+              <p>Viernes: 18:00 - 22:00</p>
+              <p>Sábados: 11:00 - 15:00 y 18:00 - 22:00</p>
+              <p>Domingos: 11:00 - 15:00 y 17:00 - 21:00</p>
             </div>
           </div>
         </div>
