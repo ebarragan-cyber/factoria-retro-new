@@ -1,4 +1,4 @@
-import { Gamepad2, BookOpen, Sparkles } from 'lucide-react';
+import { Gamepad2, BookOpen, Sparkles, PlayCircle } from 'lucide-react';
 
 export default function MuseoPage() {
   return (
@@ -69,18 +69,25 @@ export default function MuseoPage() {
 
           <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
             <h2 className="text-2xl font-bold mb-6 text-center text-white">Recorrido Virtual 360°</h2>
-            <div className="aspect-video w-full rounded-xl overflow-hidden mb-4">
-              <iframe
-                src="https://my.matterport.com/show/?m=SxQL3iGyoDo"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allowFullScreen
-                allow="xr-spatial-tracking"
-                className="w-full h-full"
-              ></iframe>
-            </div>
-            <p className="text-slate-400 text-center text-sm">
+            <a
+              href="https://my.matterport.com/show/?m=bNnPf2zbR67"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block group aspect-video w-full rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900/60"
+            >
+              <img
+                src="/alquiler-maquina-02.jpg"
+                alt="Vista interior del museo Factoria Retro"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-slate-900/40 transition-colors duration-300 group-hover:bg-slate-900/20"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                <PlayCircle className="w-20 h-20 drop-shadow-lg transition-transform duration-300 group-hover:scale-110" />
+                <span className="mt-4 text-lg font-semibold tracking-wide">Explorar recorrido virtual</span>
+              </div>
+            </a>
+            <p className="text-slate-400 text-center text-sm mt-4">
               Explora nuestro museo desde casa con nuestro recorrido virtual interactivo
             </p>
           </div>
