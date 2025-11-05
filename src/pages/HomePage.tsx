@@ -90,6 +90,29 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 bg-slate-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Horarios del museo</h2>
+            <p className="text-slate-300">Planifica tu visita y asegúrate de no perderte ninguna sesión de juego.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-slate-800/60 rounded-2xl border border-slate-700 p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">Viernes</h3>
+              <p className="text-cyan-400 text-xl font-bold">18:00 – 22:00</p>
+            </div>
+            <div className="bg-slate-800/60 rounded-2xl border border-slate-700 p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">Sábado</h3>
+              <p className="text-purple-400 text-xl font-bold">11:00 – 15:00 y 18:00 – 22:00</p>
+            </div>
+            <div className="bg-slate-800/60 rounded-2xl border border-slate-700 p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">Domingo</h3>
+              <p className="text-pink-400 text-xl font-bold">11:00 – 15:00 y 17:00 – 21:00</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

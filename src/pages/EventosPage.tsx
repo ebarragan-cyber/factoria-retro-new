@@ -43,7 +43,7 @@ export default function EventosPage() {
         <div className="mb-16">
           <div className="aspect-video w-full rounded-2xl overflow-hidden bg-gradient-to-r from-cyan-900/50 to-purple-900/50 border border-cyan-500/30 relative">
             <img
-              src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="public\evento-retro.jpg"
               alt="Eventos gaming en Factoría Retro"
               className="w-full h-full object-cover opacity-80"
             />

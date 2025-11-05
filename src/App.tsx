@@ -8,14 +8,13 @@ import MuseoPage from './pages/MuseoPage';
 import EventosPage from './pages/EventosPage';
 import CumpleanosPage from './pages/CumpleanosPage';
 import AlquilerPage from './pages/AlquilerPage';
-import ExposicionesPage from './pages/ExposicionesPage';
 import SATPage from './pages/SATPage';
 import EntradasPage from './pages/EntradasPage';
 import TiendaPage from './pages/TiendaPage';
 import ContactoPage from './pages/ContactoPage';
 import TorneosPage from './pages/TorneosPage';
 
-type PageType = 'inicio' | 'historia' | 'museo' | 'eventos' | 'torneos' | 'cumpleanos' | 'alquiler' | 'exposiciones' | 'sat' | 'entradas' | 'tienda' | 'contacto';
+type PageType = 'inicio' | 'historia' | 'museo' | 'eventos' | 'torneos' | 'cumpleanos' | 'alquiler' | 'sat' | 'entradas' | 'tienda' | 'contacto';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('inicio');
@@ -29,7 +28,6 @@ export default function App() {
       case 'torneos': return <TorneosPage />;
       case 'cumpleanos': return <CumpleanosPage />;
       case 'alquiler': return <AlquilerPage />;
-      case 'exposiciones': return <ExposicionesPage />;
       case 'sat': return <SATPage />;
       case 'entradas': return <EntradasPage />;
       case 'tienda': return <TiendaPage />;

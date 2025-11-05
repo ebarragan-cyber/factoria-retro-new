@@ -35,9 +35,14 @@ export default function SATPage() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
             Servicio Técnico
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Reparación y mantenimiento de consolas retro y máquinas arcade por expertos especializados
-          </p>
+          <div className="text-xl text-slate-300 max-w-3xl mx-auto space-y-4">
+            <p>
+              ¿Tu consola retro ya no enciende? ¿Tu máquina arcade perdió la magia? En nuestro taller damos nueva vida a tus clásicos favoritos.
+            </p>
+            <p>
+              Somos especialistas en reparación y mantenimiento de consolas retro y máquinas arcade, cuidando cada detalle con precisión y respeto por la historia del videojuego.
+            </p>
+          </div>
         </div>
 
         {/* Imagen Principal */}
@@ -179,65 +184,6 @@ export default function SATPage() {
                 Pruebas finales y entrega con 6 meses de garantía
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Precios y garantías */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold mb-6 text-red-400">Tarifas de Servicio</h3>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-slate-700">
-                <span className="text-slate-300">Diagnóstico</span>
-                <span className="text-red-400 font-bold">GRATIS</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-700">
-                <span className="text-slate-300">Reparación básica</span>
-                <span className="text-red-400 font-bold">30-60€</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-700">
-                <span className="text-slate-300">Reparación compleja</span>
-                <span className="text-red-400 font-bold">60-120€</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-700">
-                <span className="text-slate-300">Restauración completa</span>
-                <span className="text-red-400 font-bold">120-300€</span>
-              </div>
-              <div className="flex justify-between items-center py-2">
-                <span className="text-slate-300">Limpieza profunda</span>
-                <span className="text-red-400 font-bold">25€</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold mb-6 text-pink-400">Garantías</h3>
-            <ul className="space-y-4 text-slate-300">
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-pink-400 mr-3 mt-0.5" />
-                <div>
-                  <strong>6 meses de garantía</strong> en todas las reparaciones realizadas
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-pink-400 mr-3 mt-0.5" />
-                <div>
-                  <strong>Piezas originales</strong> siempre que sea posible, compatibles certificadas como alternativa
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-pink-400 mr-3 mt-0.5" />
-                <div>
-                  <strong>Sin arreglo, sin coste</strong> - Solo pagas si conseguimos reparar tu consola
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-pink-400 mr-3 mt-0.5" />
-                <div>
-                  <strong>Técnicos certificados</strong> con más de 15 años de experiencia en gaming retro
-                </div>
-              </li>
-            </ul>
           </div>
         </div>
 
