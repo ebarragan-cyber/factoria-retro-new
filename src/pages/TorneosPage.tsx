@@ -20,7 +20,7 @@ const archivedTournaments: Tournament[] = [
     ],
     image: '/eventos-img/torneo-futbolin-2.jpeg',
     imageAlt: 'Cartel promocional del segundo torneo de futbolín de Factoría Retro',
-    location: 'Factoría Retro, Alcorcón',
+    location: 'C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid',
   },
   {
     title: 'NUEVA MAQUINA TOTEM 4 PLAYERS',
@@ -32,7 +32,7 @@ const archivedTournaments: Tournament[] = [
     ],
     image: '/eventos-img/maquina-totem-4.jpeg',
     imageAlt: 'Máquina arcade TOTEM 4 players en Factoría Retro',
-    location: 'Factoría Retro, Alcorcón',
+    location: 'C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid',
     gallery: [
       {
         src: '/eventos-img/maquina-totem-4-1.jpeg',
@@ -57,7 +57,7 @@ const archivedTournaments: Tournament[] = [
     ],
     image: '/eventos-img/torneo-the-king.jpg',
     imageAlt: 'Cartel del primer torneo de The King of Fighters 98',
-    location: 'Factoría Retro, Alcorcón',
+    location: 'C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid',
   },
   {
     title: '¡¡Nuevo horario de verano!!',
@@ -67,7 +67,7 @@ const archivedTournaments: Tournament[] = [
     ],
     image: '/eventos-img/nuevo-horario.jpg',
     imageAlt: 'Anuncio del horario de verano en Factoría Retro',
-    location: 'Factoría Retro, Alcorcón',
+    location: 'C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid',
   },
   {
     title: 'Torneo de STREET FIGHTER II: Champion Edition',
@@ -83,7 +83,7 @@ const archivedTournaments: Tournament[] = [
     ],
     image: '/eventos-img/torneo-street.jpeg',
     imageAlt: 'Cartel del torneo de Street Fighter II Champion Edition',
-    location: 'Factoría Retro, Alcorcón',
+    location: 'C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid',
   },
 ];
 

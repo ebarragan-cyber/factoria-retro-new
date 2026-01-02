@@ -23,7 +23,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Teléfono</h3>
-                  <p className="text-slate-300">+34 622 844 292</p>
+                  <p className="text-slate-300">622844292</p>
                   <p className="text-slate-400 text-sm">
                     Viernes: 18:00-22:00
                     <br />
@@ -56,12 +56,12 @@ export default function ContactoPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-white">Dirección</h3>
                   <a
-                    href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                    href="https://www.google.com/maps?q=C%2F+Parque+de+Caba%C3%B1eros,+Av.+del+Pinar,+3,+28924+Alcorc%C3%B3n,+Madrid"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-300 hover:text-cyan-300 transition-colors block"
                   >
-                    Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
+                    C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid
                   </a>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">WhatsApp</h3>
-                  <p className="text-slate-300">+34 123 456 789</p>
+                  <p className="text-slate-300">622844292</p>
                   <p className="text-slate-400 text-sm">Respuesta inmediata</p>
                 </div>
               </div>
@@ -202,12 +202,12 @@ export default function ContactoPage() {
               <MapPin className="w-16 h-16 text-slate-400 mx-auto mb-4" />
               <p className="text-slate-400">Mapa interactivo próximamente</p>
               <a
-                href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                href="https://www.google.com/maps?q=C%2F+Parque+de+Caba%C3%B1eros,+Av.+del+Pinar,+3,+28924+Alcorc%C3%B3n,+Madrid"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-500 text-sm mt-2 hover:text-cyan-300 transition-colors"
               >
-                Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
+                C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid
               </a>
             </div>
           </div>

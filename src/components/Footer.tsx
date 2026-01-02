@@ -168,7 +168,7 @@ export default function Footer({ onPageChange }: FooterProps) {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/34123456789"
+        href="https://wa.me/34622844292"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center w-12 h-12 md:w-14 md:h-14"
