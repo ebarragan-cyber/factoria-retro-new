@@ -93,7 +93,7 @@ export default function TorneosPage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-red-500 bg-clip-text text-transparent">
-            Torneos Factoría Retro
+            Noticias Factoría Retro
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Recuperamos el espíritu competitivo de los salones recreativos. Aquí encontrarás los torneos históricos de Factoría Retro
