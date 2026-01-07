@@ -67,9 +67,14 @@ export default function TicketPurchaseForm() {
         })
       });
 
-      const payload = await response.json();
+      const contentType = response.headers.get('content-type') ?? '';
+      const payload = contentType.includes('application/json')
+        ? await response.json()
+        : null;
+
       if (!response.ok || !payload?.url) {
-        throw new Error(payload?.message || 'No se ha podido completar el pago. Por favor, inténtalo de nuevo.');
+        const message = payload?.message || 'No se ha podido completar el pago. Por favor, inténtalo de nuevo.';
+        throw new Error(message);
       }
 
       window.location.href = payload.url;
