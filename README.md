@@ -9,8 +9,8 @@ Este repositorio contiene un MVP en **Vite + React** con una API en Node para la
 Crea un archivo `.env` con:
 
 ```bash
-ADMIN_USER=admin
-ADMIN_PASS=supersecret
+ADMIN_USER=Admin
+ADMIN_PASS=Demo123
 PAYMENT_IBAN=ES00 0000 0000 0000 0000 0000
 PAYMENT_HOLDER=Factoría Retro
 PAYMENT_BANK=Banco de Ejemplo
