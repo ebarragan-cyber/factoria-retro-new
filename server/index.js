@@ -75,7 +75,7 @@ const sendJson = (res, statusCode, payload) => {
   res.end(JSON.stringify(payload));
 };
 
-const createStripeCheckoutSession = async ({ email, quantity, successUrl, cancelUrl }) => {
+const createStripeCheckoutSession = async ({ email, quantity, visitDate, visitTime, successUrl, cancelUrl }) => {
   if (!stripeSecretKey) {
     throw new Error('Stripe no está configurado.');
   }
@@ -89,7 +89,9 @@ const createStripeCheckoutSession = async ({ email, quantity, successUrl, cancel
     'line_items[0][price_data][currency]': ticket.currency,
     'line_items[0][price_data][unit_amount]': String(ticket.price * 100),
     'line_items[0][price_data][product_data][name]': ticket.name,
-    'line_items[0][quantity]': String(quantity)
+    'line_items[0][quantity]': String(quantity),
+    'metadata[visit_date]': visitDate,
+    'metadata[visit_time]': visitTime
   });
 
   return new Promise((resolve, reject) => {
@@ -285,7 +287,7 @@ const handler = async (req, res) => {
         return sendJson(res, 400, { message: 'JSON inválido.' });
       }
 
-      const { name, email, quantity } = body ?? {};
+      const { name, email, quantity, visitDate, visitTime } = body ?? {};
       const normalizedQuantity = Number(quantity ?? 0);
       if (!name || !email) {
         return sendJson(res, 400, { message: 'Nombre y email son obligatorios.' });
@@ -295,11 +297,17 @@ const handler = async (req, res) => {
         return sendJson(res, 400, { message: 'Selecciona al menos 1 entrada.' });
       }
 
+      if (!visitDate || !visitTime) {
+        return sendJson(res, 400, { message: 'Selecciona el día y la hora de tu visita.' });
+      }
+
       const clientUrl = process.env.CLIENT_URL ?? 'http://localhost:5173';
       try {
         const session = await createStripeCheckoutSession({
           email,
           quantity: normalizedQuantity,
+          visitDate,
+          visitTime,
           successUrl: `${clientUrl}/pago-completado`,
           cancelUrl: `${clientUrl}/entradas`
         });

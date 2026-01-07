@@ -1,6 +1,7 @@
 import type { FormEvent } from 'react';
 import { useState } from 'react';
 import { CreditCard, Mail, ShieldCheck, User } from 'lucide-react';
+import TicketCalendar from './TicketCalendar';
 import { SUPPORT_EMAIL } from '../utils/support';
 
 const MIN_TICKETS = 1;
@@ -11,8 +12,15 @@ export default function TicketPurchaseForm() {
     email: '',
     quantity: 1
   });
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleDateTimeSelect = (date: Date, time: string) => {
+    setSelectedDate(date);
+    setSelectedTime(time);
+  };
 
   const validateForm = () => {
     if (!formData.name.trim()) {
@@ -26,6 +34,10 @@ export default function TicketPurchaseForm() {
 
     if (formData.quantity < MIN_TICKETS) {
       return 'Selecciona al menos 1 entrada.';
+    }
+
+    if (!selectedDate || !selectedTime) {
+      return 'Selecciona el día y la hora de tu visita.';
     }
 
     return null;
@@ -49,7 +61,9 @@ export default function TicketPurchaseForm() {
         body: JSON.stringify({
           name: formData.name.trim(),
           email: formData.email.trim(),
-          quantity: formData.quantity
+          quantity: formData.quantity,
+          visitDate: selectedDate?.toISOString().split('T')[0],
+          visitTime: selectedTime
         })
       });
 
@@ -74,6 +88,8 @@ export default function TicketPurchaseForm() {
           No almacenamos datos bancarios en esta web.
         </p>
       </div>
+
+      <TicketCalendar onDateTimeSelect={handleDateTimeSelect} />
 
       <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 backdrop-blur-sm">
         <div className="flex items-center justify-center mb-4">

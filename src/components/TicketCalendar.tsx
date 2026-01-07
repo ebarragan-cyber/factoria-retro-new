@@ -6,9 +6,17 @@ interface TicketCalendarProps {
 }
 
 const OPENING_HOURS = {
-  weekday: { start: 10, end: 20 },
-  saturday: { start: 10, end: 22 },
-  sunday: { start: 12, end: 20 }
+  friday: [
+    { start: 18, end: 22 }
+  ],
+  saturday: [
+    { start: 11, end: 15 },
+    { start: 18, end: 22 }
+  ],
+  sunday: [
+    { start: 11, end: 15 },
+    { start: 17, end: 21 }
+  ]
 };
 
 export default function TicketCalendar({ onDateTimeSelect }: TicketCalendarProps) {
@@ -29,31 +37,36 @@ export default function TicketCalendar({ onDateTimeSelect }: TicketCalendarProps
 
   const getAvailableTimes = (date: Date) => {
     const day = date.getDay();
-    let hours: { start: number; end: number };
+    let ranges: { start: number; end: number }[] = [];
 
-    if (day === 6) {
-      hours = OPENING_HOURS.saturday;
+    if (day === 5) {
+      ranges = OPENING_HOURS.friday;
+    } else if (day === 6) {
+      ranges = OPENING_HOURS.saturday;
     } else if (day === 0) {
-      hours = OPENING_HOURS.sunday;
+      ranges = OPENING_HOURS.sunday;
     } else {
-      hours = OPENING_HOURS.weekday;
+      return [];
     }
 
-    const times: string[] = [];
-    for (let hour = hours.start; hour < hours.end; hour++) {
-      times.push(`${hour.toString().padStart(2, '0')}:00`);
-      if (hour < hours.end - 1) {
-        times.push(`${hour.toString().padStart(2, '0')}:30`);
+    return ranges.flatMap(({ start, end }) => {
+      const times: string[] = [];
+      for (let hour = start; hour < end; hour++) {
+        times.push(`${hour.toString().padStart(2, '0')}:00`);
+        if (hour < end - 1) {
+          times.push(`${hour.toString().padStart(2, '0')}:30`);
+        }
       }
-    }
-
-    return times;
+      return times;
+    });
   };
 
   const isDateDisabled = (date: Date) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    return date < today;
+    const day = date.getDay();
+    const isOpenDay = day === 5 || day === 6 || day === 0;
+    return date < today || !isOpenDay;
   };
 
   const handleDateSelect = (day: number) => {
