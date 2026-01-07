@@ -137,13 +137,6 @@ export default function Footer({ onPageChange }: FooterProps) {
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
-                    src="/IMG-20250915-WA0009.png"
-                    alt="Patrocinador"
-                    className="h-9 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-                <div className="transition-all duration-300 hover:scale-105">
-                  <img
                     src="/JESUS-TOLEDO.png"
                     alt="Jesús Toledo Ebanistería"
                     className="h-9 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
