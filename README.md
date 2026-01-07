@@ -16,7 +16,7 @@ PAYMENT_HOLDER=Factoría Retro
 PAYMENT_BANK=Banco de Ejemplo
 STRIPE_SECRET_KEY=sk_test_xxx
 CLIENT_URL=http://localhost:5173
-VITE_SUPPORT_EMAIL=soporte@factoriaretro.com
+VITE_SUPPORT_EMAIL=mifactoriaretro@gmail.com
 ```
 
 Opcionales:
