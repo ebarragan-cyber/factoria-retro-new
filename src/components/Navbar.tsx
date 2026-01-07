@@ -38,7 +38,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
 
   const services = [
     { id: 'eventos', label: 'Eventos', icon: Calendar },
-    { id: 'torneos', label: 'Torneos', icon: Trophy },
+    { id: 'torneos', label: 'Noticias', icon: Trophy },
     { id: 'cumpleanos', label: 'Cumpleaños', icon: Gift },
     { id: 'alquiler', label: 'Alquiler', icon: Building },
     { id: 'sat', label: 'SAT', icon: Wrench }
@@ -262,25 +262,25 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                       <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Contacto directo</p>
                       <div className="space-y-3">
                         <a
-                          href="tel:+34123456789"
+                          href="tel:+34622844292"
                           className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
                         >
                           <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
                             <Phone className="h-4 w-4" />
                           </span>
-                          <span className="text-sm font-medium">+34 123 456 789</span>
+                          <span className="text-sm font-medium">+34 622 844 292</span>
                         </a>
                         <a
-                          href="mailto:info@factoriaretro.es"
+                          href="mailto:mifactoriaretro@gmail.com"
                           className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
                         >
                           <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800/80 text-cyan-300">
                             <Mail className="h-4 w-4" />
                           </span>
-                          <span className="text-sm font-medium">info@factoriaretro.es</span>
+                          <span className="text-sm font-medium">mifactoriaretro@gmail.com</span>
                         </a>
                         <a
-                          href="https://www.google.com/maps?q=Calle+Parque+de+Caba%C3%B1eros+3,+esquina+Av+del+Pinar,+28924,+Alcorc%C3%B3n"
+                          href="https://www.google.com/maps?q=C%2F+Parque+de+Caba%C3%B1eros,+Av.+del+Pinar,+3,+28924+Alcorc%C3%B3n,+Madrid"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-left text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-200"
@@ -289,7 +289,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                             <MapPin className="h-4 w-4" />
                           </span>
                           <span className="text-sm font-medium leading-relaxed">
-                            Calle Parque de Cabañeros 3, esquina Av del Pinar, 28924, Alcorcón
+                            C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid
                           </span>
                         </a>
                       </div>
