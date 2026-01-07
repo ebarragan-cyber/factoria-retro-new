@@ -10,4 +10,5 @@ export type PageType =
   | 'entradas'
   | 'tienda'
   | 'contacto'
-  | 'admin';
+  | 'admin'
+  | 'pago-completado';

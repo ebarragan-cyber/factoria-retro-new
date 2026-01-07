@@ -14,6 +14,7 @@ import TiendaPage from './pages/TiendaPage';
 import ContactoPage from './pages/ContactoPage';
 import TorneosPage from './pages/TorneosPage';
 import AdminPage from './pages/AdminPage';
+import PagoCompletadoPage from './pages/PagoCompletadoPage';
 import { PageType } from './types/navigation';
 
 const ROUTES: Record<PageType, string> = {
@@ -28,7 +29,8 @@ const ROUTES: Record<PageType, string> = {
   entradas: '/entradas',
   tienda: '/tienda',
   contacto: '/contacto',
-  admin: '/admin'
+  admin: '/admin',
+  'pago-completado': '/pago-completado'
 };
 
 const resolvePageFromPath = (pathname: string): PageType => {
@@ -79,6 +81,7 @@ export default function App() {
       case 'tienda': return <TiendaPage />;
       case 'contacto': return <ContactoPage />;
       case 'admin': return <AdminPage />;
+      case 'pago-completado': return <PagoCompletadoPage />;
       default: return <HomePage />;
     }
   };

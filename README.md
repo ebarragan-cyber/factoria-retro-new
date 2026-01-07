@@ -1,6 +1,6 @@
-# Factoría Retro - MVP Entradas (Transferencia)
+# Factoría Retro - MVP Entradas (Stripe)
 
-Este repositorio contiene un MVP en **Vite + React** con una API en Node para la compra de entradas por transferencia y un panel `/admin` con login.
+Este repositorio contiene un MVP en **Vite + React** con una API en Node para la compra de entradas con Stripe y un panel `/admin` con login.
 
 ## Requisitos
 - Node.js 18+
@@ -14,6 +14,9 @@ ADMIN_PASS=Demo123
 PAYMENT_IBAN=ES00 0000 0000 0000 0000 0000
 PAYMENT_HOLDER=Factoría Retro
 PAYMENT_BANK=Banco de Ejemplo
+STRIPE_SECRET_KEY=sk_test_xxx
+CLIENT_URL=http://localhost:5173
+VITE_SUPPORT_EMAIL=soporte@factoriaretro.com
 ```
 
 Opcionales:
@@ -26,6 +29,7 @@ CORS_ORIGIN=http://localhost:5173
 
 > `STORAGE_MODE=memory` fuerza almacenamiento en memoria (útil en entornos serverless).
 > `CORS_ORIGIN` es útil si accedes a la API desde otro dominio/puerto distinto a Vite.
+> `STRIPE_SECRET_KEY` es obligatorio para generar la sesión de pago en Stripe Checkout.
 
 ## Desarrollo local
 
@@ -39,7 +43,7 @@ Esto ejecuta:
 - API en `http://localhost:3001` (Vite hace proxy de `/api`)
 
 ## Limitaciones sin base de datos
-- En local, los pedidos se almacenan en `data/orders.json`.
+- En local, los pedidos del panel admin se almacenan en `data/orders.json`.
 - En despliegues serverless (Vercel/Netlify) el sistema cambia automáticamente a **memoria**, por lo que los pedidos se perderán con cada reinicio.
 
 ## Sustituir Storage por base de datos

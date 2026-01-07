@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import http from 'http';
+import https from 'https';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
@@ -9,6 +10,7 @@ import { getPaymentInstructions } from './utils/payment.js';
 import { TICKET_OPTIONS } from './config/tickets.js';
 
 const storage = createStorage();
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY ?? null;
 const sessionStore = new Map();
 const SESSION_TTL_MS = 8 * 60 * 60 * 1000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -71,6 +73,60 @@ const parseJsonBody = async (req) => {
 const sendJson = (res, statusCode, payload) => {
   res.writeHead(statusCode, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify(payload));
+};
+
+const createStripeCheckoutSession = async ({ email, quantity, successUrl, cancelUrl }) => {
+  if (!stripeSecretKey) {
+    throw new Error('Stripe no está configurado.');
+  }
+
+  const ticket = TICKET_OPTIONS[0];
+  const payload = new URLSearchParams({
+    mode: 'payment',
+    success_url: successUrl,
+    cancel_url: cancelUrl,
+    customer_email: email,
+    'line_items[0][price_data][currency]': ticket.currency,
+    'line_items[0][price_data][unit_amount]': String(ticket.price * 100),
+    'line_items[0][price_data][product_data][name]': ticket.name,
+    'line_items[0][quantity]': String(quantity)
+  });
+
+  return new Promise((resolve, reject) => {
+    const request = https.request(
+      {
+        hostname: 'api.stripe.com',
+        path: '/v1/checkout/sessions',
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${stripeSecretKey}`,
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Length': Buffer.byteLength(payload.toString())
+        }
+      },
+      (response) => {
+        let data = '';
+        response.on('data', chunk => {
+          data += chunk;
+        });
+        response.on('end', () => {
+          try {
+            const parsed = JSON.parse(data);
+            if (response.statusCode && response.statusCode >= 400) {
+              return reject(new Error(parsed?.error?.message || 'Stripe error.'));
+            }
+            return resolve(parsed);
+          } catch (error) {
+            return reject(error);
+          }
+        });
+      }
+    );
+
+    request.on('error', reject);
+    request.write(payload.toString());
+    request.end();
+  });
 };
 
 const getContentType = (filePath) => {
@@ -221,6 +277,36 @@ const handler = async (req, res) => {
       }
       const updatedOrder = await storage.cancelOrder(cancelMatch[1]);
       return sendJson(res, 200, { order: updatedOrder });
+    }
+
+    if (req.method === 'POST' && pathname === '/api/stripe/checkout') {
+      const body = await parseJsonBody(req);
+      if (body === null) {
+        return sendJson(res, 400, { message: 'JSON inválido.' });
+      }
+
+      const { name, email, quantity } = body ?? {};
+      const normalizedQuantity = Number(quantity ?? 0);
+      if (!name || !email) {
+        return sendJson(res, 400, { message: 'Nombre y email son obligatorios.' });
+      }
+
+      if (!Number.isInteger(normalizedQuantity) || normalizedQuantity < 1) {
+        return sendJson(res, 400, { message: 'Selecciona al menos 1 entrada.' });
+      }
+
+      const clientUrl = process.env.CLIENT_URL ?? 'http://localhost:5173';
+      try {
+        const session = await createStripeCheckoutSession({
+          email,
+          quantity: normalizedQuantity,
+          successUrl: `${clientUrl}/pago-completado`,
+          cancelUrl: `${clientUrl}/entradas`
+        });
+        return sendJson(res, 200, { url: session.url });
+      } catch (error) {
+        return sendJson(res, 500, { message: error instanceof Error ? error.message : 'Stripe error.' });
+      }
     }
 
     if (req.method === 'POST' && pathname === '/api/orders') {
