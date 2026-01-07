@@ -38,7 +38,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
 
   const services = [
     { id: 'eventos', label: 'Eventos', icon: Calendar },
-    { id: 'torneos', label: 'Torneos', icon: Trophy },
+    { id: 'torneos', label: 'Noticias', icon: Trophy },
     { id: 'cumpleanos', label: 'Cumpleaños', icon: Gift },
     { id: 'alquiler', label: 'Alquiler', icon: Building },
     { id: 'sat', label: 'SAT', icon: Wrench }
