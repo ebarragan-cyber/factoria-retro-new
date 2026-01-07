@@ -21,9 +21,11 @@ Opcionales:
 ```bash
 PORT=3001
 STORAGE_MODE=memory
+CORS_ORIGIN=http://localhost:5173
 ```
 
 > `STORAGE_MODE=memory` fuerza almacenamiento en memoria (útil en entornos serverless).
+> `CORS_ORIGIN` es útil si accedes a la API desde otro dominio/puerto distinto a Vite.
 
 ## Desarrollo local
 

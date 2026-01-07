@@ -127,6 +127,18 @@ const handler = async (req, res) => {
   const { pathname } = url;
 
   if (pathname.startsWith('/api')) {
+    const corsOrigin = process.env.CORS_ORIGIN ?? 'http://localhost:5173';
+    res.setHeader('Access-Control-Allow-Origin', corsOrigin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204);
+      res.end();
+      return undefined;
+    }
+
     if (req.method === 'POST' && pathname === '/api/admin/login') {
       const body = await parseJsonBody(req);
       if (body === null) {
