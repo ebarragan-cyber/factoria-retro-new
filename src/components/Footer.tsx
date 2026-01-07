@@ -109,7 +109,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <h3 className="text-lg font-semibold text-white mb-4">Servicios</h3>
               <ul className="space-y-2">
                 <li><button onClick={() => onPageChange('eventos')} className="text-slate-400 hover:text-cyan-400 transition-colors">Eventos</button></li>
-                <li><button onClick={() => onPageChange('torneos')} className="text-slate-400 hover:text-cyan-400 transition-colors">Torneos</button></li>
+                <li><button onClick={() => onPageChange('torneos')} className="text-slate-400 hover:text-cyan-400 transition-colors">Noticias</button></li>
                 <li><button onClick={() => onPageChange('cumpleanos')} className="text-slate-400 hover:text-cyan-400 transition-colors">Cumpleaños</button></li>
                 <li><button onClick={() => onPageChange('alquiler')} className="text-slate-400 hover:text-cyan-400 transition-colors">Alquiler</button></li>
                 <li><button onClick={() => onPageChange('tienda')} className="text-slate-400 hover:text-cyan-400 transition-colors">Tienda</button></li>
@@ -168,7 +168,7 @@ export default function Footer({ onPageChange }: FooterProps) {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/34123456789"
+        href="https://wa.me/34622844292"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center w-12 h-12 md:w-14 md:h-14"

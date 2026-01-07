@@ -63,17 +63,11 @@ export default function EventosPage() {
               <Star className="w-10 h-10 text-purple-400 mr-3" />
               <h3 className="text-3xl md:text-4xl font-bold text-white">Tipos de Eventos</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border-l-4 border-cyan-400 pl-4">
                 <h4 className="font-semibold text-cyan-400 mb-2 text-lg">Torneos Competitivos</h4>
                 <p className="text-slate-300 text-sm">
                   Street Fighter, King of Fighters, Tekken y más. Premios retro y dinamización profesional.
-                </p>
-              </div>
-              <div className="border-l-4 border-purple-400 pl-4">
-                <h4 className="font-semibold text-purple-400 mb-2 text-lg">Noches Temáticas</h4>
-                <p className="text-slate-300 text-sm">
-                  Eventos dedicados a los 80s, 90s, Nintendo, Sega y franquicias icónicas.
                 </p>
               </div>
               <div className="border-l-4 border-pink-400 pl-4">

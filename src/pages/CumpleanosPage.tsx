@@ -68,12 +68,12 @@ Compite con tus amigos, supera tus récords y revive esa magia de los videojuego
                 <Gift className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white">Paquete Básico</h3>
-              <div className="text-3xl font-bold text-pink-400 mb-6">180€</div>
+              <div className="text-3xl font-bold text-pink-400 mb-6">150€</div>
               <ul className="text-slate-300 space-y-3 mb-8 text-left">
-                <li>• Local en exclusiva, de lunes a jueves</li>
-                <li>• Trae tu comida favorita</li>
-                <li>• 2 horas de diversión sin límites</li>
-                <li>• Hasta 15 personas (+10 €/persona adicional)</li>
+                <li>• 10 personas</li>
+                <li>• 2 horas</li>
+                <li>• 75€ hora adicional</li>
+                <li>• 10€/persona adicional</li>
               </ul>
             </div>
 
@@ -85,12 +85,12 @@ Compite con tus amigos, supera tus récords y revive esa magia de los videojuego
                 <Star className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white">Paquete Premium</h3>
-              <p className="text-lg text-purple-300 font-semibold mb-6">Local en exclusiva, de lunes a jueves</p>
+              <p className="text-lg text-purple-300 font-semibold mb-6">Pedir presupuesto</p>
               <ul className="text-slate-300 space-y-3 mb-8 text-left">
-                <li>• Trae tu comida y personaliza cada detalle</li>
-                <li>• Decoración y animación exclusiva</li>
-                <li>• Temática con cosplayers</li>
-                <li>• Experiencia inmersiva para todo el grupo</li>
+                <li>• Cuéntanos qué tienes en mente</li>
+                <li>• Propuesta personalizada para tu evento</li>
+                <li>• Ajustamos opciones y servicios</li>
+                <li>• Presupuesto a medida</li>
               </ul>
             </div>
           </div>
@@ -197,8 +197,8 @@ Compite con tus amigos, supera tus récords y revive esa magia de los videojuego
                 className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white focus:border-purple-400 focus:outline-none transition-colors"
               >
                 <option value="">Selecciona un paquete</option>
-                <option value="basico">Paquete Básico (180€)</option>
-                <option value="premium">Paquete Premium</option>
+                <option value="basico">Paquete Básico (150€)</option>
+                <option value="premium">Paquete Premium (Pedir presupuesto)</option>
               </select>
             </div>
             <div className="md:col-span-2">

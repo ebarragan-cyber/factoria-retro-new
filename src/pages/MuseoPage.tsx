@@ -1,4 +1,4 @@
-import { Gamepad2, BookOpen, Sparkles, PlayCircle } from 'lucide-react';
+import { Gamepad2, Sparkles, PlayCircle } from 'lucide-react';
 
 export default function MuseoPage() {
   return (
@@ -47,24 +47,6 @@ export default function MuseoPage() {
               amigos en un duelo de Street Fighter o revive las hazañas de Mario mientras busca salvar a la princesa. Cada pantalla
               es un portal al pasado, listo para revivir emociones y anécdotas.
             </p>
-          </div>
-
-          <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
-            <div className="flex items-center mb-6">
-              <BookOpen className="w-8 h-8 text-yellow-400 mr-3" />
-              <h2 className="text-3xl font-bold text-white">Contexto y curiosidades</h2>
-            </div>
-            <p className="text-lg text-slate-300 leading-relaxed mb-6">
-              A lo largo del recorrido encontrarás paneles explicativos y anécdotas sobre la creación de estos sistemas,
-              los ingenieros y compañías que los hicieron posibles y el impacto cultural que tuvieron. Queremos que pequeños
-              y mayores descubran cómo la diversión se reinventa con cada generación.
-            </p>
-            <div className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/50 rounded-xl p-6">
-              <p className="text-lg text-white font-semibold text-center leading-relaxed">
-                Ven y acompáñanos en este viaje épico a través de las eras del gaming: revive la nostalgia, comparte la magia
-                de los juegos retro y forma parte de la historia viva de los videojuegos.
-              </p>
-            </div>
           </div>
 
           <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
