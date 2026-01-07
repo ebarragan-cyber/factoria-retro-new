@@ -15,6 +15,7 @@ import ContactoPage from './pages/ContactoPage';
 import TorneosPage from './pages/TorneosPage';
 import AdminPage from './pages/AdminPage';
 import PagoCompletadoPage from './pages/PagoCompletadoPage';
+import GaleriaPage from './pages/GaleriaPage';
 import { PageType } from './types/navigation';
 
 const ROUTES: Record<PageType, string> = {
@@ -27,6 +28,7 @@ const ROUTES: Record<PageType, string> = {
   alquiler: '/alquiler',
   sat: '/sat',
   entradas: '/entradas',
+  galeria: '/galeria',
   tienda: '/tienda',
   contacto: '/contacto',
   admin: '/admin',
@@ -78,6 +80,7 @@ export default function App() {
       case 'alquiler': return <AlquilerPage />;
       case 'sat': return <SATPage />;
       case 'entradas': return <EntradasPage />;
+      case 'galeria': return <GaleriaPage />;
       case 'tienda': return <TiendaPage />;
       case 'contacto': return <ContactoPage />;
       case 'admin': return <AdminPage />;

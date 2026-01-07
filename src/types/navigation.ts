@@ -8,6 +8,7 @@ export type PageType =
   | 'alquiler'
   | 'sat'
   | 'entradas'
+  | 'galeria'
   | 'tienda'
   | 'contacto'
   | 'admin'

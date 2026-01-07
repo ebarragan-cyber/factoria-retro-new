@@ -114,6 +114,7 @@ export default function Footer({ onPageChange }: FooterProps) {
                 <li><button onClick={() => onPageChange('museo')} className="text-slate-400 hover:text-cyan-400 transition-colors">Museo</button></li>
                 <li><button onClick={() => onPageChange('historia')} className="text-slate-400 hover:text-cyan-400 transition-colors">Historia</button></li>
                 <li><button onClick={() => onPageChange('entradas')} className="text-slate-400 hover:text-cyan-400 transition-colors">Entradas</button></li>
+                <li><button onClick={() => onPageChange('galeria')} className="text-slate-400 hover:text-cyan-400 transition-colors">Galería</button></li>
                 <li>
                   <a
                     href="/admin"
