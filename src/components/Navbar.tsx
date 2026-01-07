@@ -19,21 +19,21 @@ import {
   ShoppingBag,
   MessageCircle
 } from 'lucide-react';
+import { PageType } from '../types/navigation';
 
 interface NavbarProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
+  currentPage: PageType;
+  onPageChange: (page: PageType) => void;
 }
 
 export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  const handlePageChange = (page: string) => {
+  const handlePageChange = (page: PageType) => {
     onPageChange(page);
     setIsMenuOpen(false);
     setIsServicesOpen(false);
-    window.scrollTo(0, 0);
   };
 
   const services = [

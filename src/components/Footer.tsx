@@ -1,6 +1,18 @@
+import type { MouseEvent } from 'react';
+import { PageType } from '../types/navigation';
+
 interface FooterProps {
-  onPageChange: (page: string) => void;
+  onPageChange: (page: PageType) => void;
 }
+
+const handleFooterNavigation = (
+  event: MouseEvent<HTMLAnchorElement>,
+  onPageChange: (page: PageType) => void,
+  page: PageType
+) => {
+  event.preventDefault();
+  onPageChange(page);
+};
 
 export default function Footer({ onPageChange }: FooterProps) {
   const socialLinks = [
@@ -102,6 +114,15 @@ export default function Footer({ onPageChange }: FooterProps) {
                 <li><button onClick={() => onPageChange('museo')} className="text-slate-400 hover:text-cyan-400 transition-colors">Museo</button></li>
                 <li><button onClick={() => onPageChange('historia')} className="text-slate-400 hover:text-cyan-400 transition-colors">Historia</button></li>
                 <li><button onClick={() => onPageChange('entradas')} className="text-slate-400 hover:text-cyan-400 transition-colors">Entradas</button></li>
+                <li>
+                  <a
+                    href="/admin"
+                    onClick={(event) => handleFooterNavigation(event, onPageChange, 'admin')}
+                    className="text-slate-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Admin
+                  </a>
+                </li>
               </ul>
             </div>
 

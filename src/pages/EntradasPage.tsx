@@ -9,7 +9,7 @@ export default function EntradasPage() {
             Compra tus Entradas
           </h1>
           <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-            Reserva tu visita y disfruta de la experiencia retro gaming
+            Reserva tu visita y disfruta de la experiencia retro gaming con pago por transferencia.
           </p>
         </div>
 
