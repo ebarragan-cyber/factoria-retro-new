@@ -1,0 +1,71 @@
+{
+  "orders": [
+    {
+      "id": "d37227b1-c391-47a2-badf-b29b30bb7eb7",
+      "status": "CONFIRMED",
+      "createdAt": "2026-01-07T11:00:27.717Z",
+      "updatedAt": "2026-01-07T11:00:46.219Z",
+      "customer": {
+        "name": "prueba",
+        "email": "prueba@email.com",
+        "phone": "677984356"
+      },
+      "visit": {
+        "date": "2026-01-22",
+        "time": "13:00"
+      },
+      "items": [
+        {
+          "id": "general",
+          "name": "Entrada general",
+          "price": 10,
+          "quantity": 1
+        },
+        {
+          "id": "dia-completo",
+          "name": "Pase del día completo",
+          "price": 15,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 25,
+      "paymentReference": "EVT-20260107-9136",
+      "tickets": [
+        {
+          "code": "TCK-B7B35382",
+          "issuedAt": "2026-01-07T11:00:46.216Z"
+        },
+        {
+          "code": "TCK-31A1E453",
+          "issuedAt": "2026-01-07T11:00:46.216Z"
+        }
+      ]
+    },
+    {
+      "id": "422d0cff-87a3-451f-9e2e-a7e28752761a",
+      "status": "PENDING",
+      "createdAt": "2026-01-07T11:17:48.011Z",
+      "updatedAt": "2026-01-07T11:17:48.011Z",
+      "customer": {
+        "name": "Prueba 2",
+        "email": "prueba2@gmail.com",
+        "phone": "566789432"
+      },
+      "visit": {
+        "date": "2026-01-22",
+        "time": "15:00"
+      },
+      "items": [
+        {
+          "id": "general",
+          "name": "Entrada general",
+          "price": 10,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 10,
+      "paymentReference": "EVT-20260107-ED75",
+      "tickets": []
+    }
+  ]
+}

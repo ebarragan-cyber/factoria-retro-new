@@ -1,0 +1,15 @@
+export type PageType =
+  | 'inicio'
+  | 'historia'
+  | 'museo'
+  | 'eventos'
+  | 'torneos'
+  | 'cumpleanos'
+  | 'alquiler'
+  | 'sat'
+  | 'entradas'
+  | 'galeria'
+  | 'tienda'
+  | 'contacto'
+  | 'admin'
+  | 'pago-completado';

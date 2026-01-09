@@ -17,23 +17,24 @@ import {
   Landmark,
   Ticket,
   ShoppingBag,
+  Image,
   MessageCircle
 } from 'lucide-react';
+import { PageType } from '../types/navigation';
 
 interface NavbarProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
+  currentPage: PageType;
+  onPageChange: (page: PageType) => void;
 }
 
 export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  const handlePageChange = (page: string) => {
+  const handlePageChange = (page: PageType) => {
     onPageChange(page);
     setIsMenuOpen(false);
     setIsServicesOpen(false);
-    window.scrollTo(0, 0);
   };
 
   const services = [
@@ -49,6 +50,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
     { id: 'historia', label: 'Historia', icon: BookOpen },
     { id: 'museo', label: 'Museo', icon: Landmark },
     { id: 'entradas', label: 'Entradas', icon: Ticket },
+    { id: 'galeria', label: 'Galería', icon: Image },
     { id: 'tienda', label: 'Tienda', icon: ShoppingBag },
     { id: 'contacto', label: 'Contacto', icon: MessageCircle }
   ];
@@ -145,7 +147,16 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             >
               Entradas
             </button>
-            
+
+            <button 
+              onClick={() => handlePageChange('galeria')}
+              className={`transition-colors ${
+                currentPage === 'galeria' ? 'text-cyan-400' : 'text-white hover:text-cyan-400'
+              }`}
+            >
+              Galería
+            </button>
+
             <button 
               onClick={() => handlePageChange('tienda')}
               className={`transition-colors ${
