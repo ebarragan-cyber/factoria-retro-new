@@ -1,4 +1,7 @@
 import { Gamepad2, Sparkles, PlayCircle } from 'lucide-react';
+import museoImageOne from '../assets/galeria/Factoria retro-63.jpg';
+import museoImageTwo from '../assets/galeria/Factoria retro-66.jpg';
+import museoImageThree from '../assets/galeria/Factoria retro-67.jpg';
 
 export default function MuseoPage() {
   return (
@@ -11,6 +14,21 @@ export default function MuseoPage() {
           <p className="text-2xl text-slate-300 max-w-3xl mx-auto font-semibold">
             Un viaje por la historia del videojuego
           </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3 mb-16">
+          {[museoImageOne, museoImageTwo, museoImageThree].map((image, index) => (
+            <div
+              key={image}
+              className="overflow-hidden rounded-3xl border border-slate-700/80 bg-slate-800/40 shadow-xl"
+            >
+              <img
+                src={image}
+                alt={`Sala del museo ${index + 1}`}
+                className="h-64 w-full object-cover transition duration-300 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
 
         <div className="space-y-12">

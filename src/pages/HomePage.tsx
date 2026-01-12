@@ -1,7 +1,27 @@
 
+import { useState } from 'react';
 import { PlayCircle } from 'lucide-react';
 
+const galleryImages = Object.values(
+  import.meta.glob('../assets/galeria/*.{png,jpg,jpeg,webp,gif,svg}', {
+    eager: true,
+    import: 'default'
+  })
+) as string[];
+
 export default function HomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = galleryImages.length;
+  const currentImage = totalSlides > 0 ? galleryImages[currentSlide % totalSlides] : null;
+
+  const handlePrevious = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -44,6 +64,61 @@ export default function HomePage() {
               <span>Tour Virtual 360°</span>
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-slate-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Momentos en Factoría Retro</h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Recorre nuestra galería con un vistazo rápido a las mejores imágenes del museo.
+            </p>
+          </div>
+          {currentImage ? (
+            <div className="bg-slate-800/60 border border-slate-700 rounded-3xl p-6">
+              <div className="relative">
+                <img
+                  src={currentImage}
+                  alt={`Galería destacada ${currentSlide + 1}`}
+                  className="w-full h-[420px] object-cover rounded-2xl"
+                  loading="lazy"
+                />
+                <button
+                  type="button"
+                  onClick={handlePrevious}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
+                >
+                  Anterior
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
+                >
+                  Siguiente
+                </button>
+              </div>
+              <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <p className="text-slate-400 text-sm">
+                  Imagen {currentSlide + 1} de {totalSlides}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.location.href = '/galeria';
+                  }}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-lg hover:from-cyan-600 hover:to-purple-700 transition-all"
+                >
+                  Ver más
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-slate-800/60 border border-slate-700 rounded-3xl p-10 text-center text-slate-300">
+              Todavía no hay imágenes disponibles en la galería.
+            </div>
+          )}
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import { Calendar, Heart, Trophy, Users, MapPin, Gamepad2 } from 'lucide-react';
+import historiaImage from '../assets/galeria/Factoria retro-89.jpg';
 
 export default function HistoriaPage() {
   return (
@@ -11,6 +12,14 @@ export default function HistoriaPage() {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             El origen y la evolución de Factoría Retro
           </p>
+        </div>
+        <div className="mb-16">
+          <img
+            src={historiaImage}
+            alt="Interior de Factoría Retro"
+            className="w-full rounded-3xl border border-slate-700/80 shadow-2xl object-cover max-h-[520px]"
+            loading="lazy"
+          />
         </div>
 
         <div className="space-y-12">
