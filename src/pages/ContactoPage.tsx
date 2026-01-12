@@ -1,6 +1,35 @@
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
+const CONTACT_EMAIL = 'mifactoriaretro@gmail.com';
+
 export default function ContactoPage() {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    apellidos: '',
+    email: '',
+    telefono: '',
+    asunto: 'Información general',
+    mensaje: '',
+    privacidad: false
+  });
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    const subject = `Contacto: ${formData.asunto}`;
+    const bodyLines = [
+      `Nombre: ${formData.nombre} ${formData.apellidos}`.trim(),
+      `Email: ${formData.email}`,
+      `Teléfono: ${formData.telefono}`,
+      '',
+      formData.mensaje
+    ];
+    const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <div className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +71,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Email</h3>
-                  <p className="text-slate-300">mifactoriaretro@gmail.com</p>
+                  <p className="text-slate-300">{CONTACT_EMAIL}</p>
                   <p className="text-slate-400 text-sm">Respuesta en 24h</p>
                 </div>
               </div>
@@ -112,22 +141,28 @@ export default function ContactoPage() {
           {/* Contact Form */}
           <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
             <h3 className="text-2xl font-bold mb-6 text-white">Envíanos un Mensaje</h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">Nombre</label>
                   <input
                     type="text"
+                    value={formData.nombre}
+                    onChange={(event) => setFormData({ ...formData, nombre: event.target.value })}
                     className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:border-purple-400 focus:outline-none transition-colors"
                     placeholder="Tu nombre"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">Apellidos</label>
                   <input
                     type="text"
+                    value={formData.apellidos}
+                    onChange={(event) => setFormData({ ...formData, apellidos: event.target.value })}
                     className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:border-purple-400 focus:outline-none transition-colors"
                     placeholder="Tus apellidos"
+                    required
                   />
                 </div>
               </div>
@@ -136,8 +171,11 @@ export default function ContactoPage() {
                 <label className="block text-sm font-medium text-slate-300 mb-2">Email</label>
                 <input
                   type="email"
+                  value={formData.email}
+                  onChange={(event) => setFormData({ ...formData, email: event.target.value })}
                   className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:border-purple-400 focus:outline-none transition-colors"
                   placeholder="tu@email.com"
+                  required
                 />
               </div>
               
@@ -145,6 +183,8 @@ export default function ContactoPage() {
                 <label className="block text-sm font-medium text-slate-300 mb-2">Teléfono</label>
                 <input
                   type="tel"
+                  value={formData.telefono}
+                  onChange={(event) => setFormData({ ...formData, telefono: event.target.value })}
                   className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:border-purple-400 focus:outline-none transition-colors"
                   placeholder="+34 123 456 789"
                 />
@@ -152,7 +192,11 @@ export default function ContactoPage() {
               
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">Asunto</label>
-                <select className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white focus:border-purple-400 focus:outline-none transition-colors">
+                <select
+                  value={formData.asunto}
+                  onChange={(event) => setFormData({ ...formData, asunto: event.target.value })}
+                  className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white focus:border-purple-400 focus:outline-none transition-colors"
+                >
                   <option>Información general</option>
                   <option>Reserva de entradas</option>
                   <option>Eventos y cumpleaños</option>
@@ -168,8 +212,11 @@ export default function ContactoPage() {
                 <label className="block text-sm font-medium text-slate-300 mb-2">Mensaje</label>
                 <textarea
                   rows={5}
+                  value={formData.mensaje}
+                  onChange={(event) => setFormData({ ...formData, mensaje: event.target.value })}
                   className="w-full p-4 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:border-purple-400 focus:outline-none transition-colors"
                   placeholder="Escribe tu mensaje aquí..."
+                  required
                 ></textarea>
               </div>
               
@@ -177,7 +224,10 @@ export default function ContactoPage() {
                 <input
                   type="checkbox"
                   id="privacy"
+                  checked={formData.privacidad}
+                  onChange={(event) => setFormData({ ...formData, privacidad: event.target.checked })}
                   className="w-4 h-4 text-purple-600 bg-slate-700 border-slate-600 rounded focus:ring-purple-500"
+                  required
                 />
                 <label htmlFor="privacy" className="ml-2 text-sm text-slate-300">
                   Acepto la <a href="#" className="text-purple-400 hover:underline">política de privacidad</a> y el tratamiento de mis datos
