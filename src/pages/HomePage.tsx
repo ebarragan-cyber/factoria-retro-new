@@ -12,7 +12,7 @@ const galleryImages = Object.values(
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = galleryImages.length;
-  const currentImage = totalSlides > 0 ? galleryImages[currentSlide % totalSlides] : null;
+  const slidesToShow = 4;
 
   const handlePrevious = () => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
@@ -21,6 +21,16 @@ export default function HomePage() {
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
+
+  const visibleImages = totalSlides > 0
+    ? Array.from({ length: Math.min(slidesToShow, totalSlides) }, (_, index) => {
+      const imageIndex = (currentSlide + index) % totalSlides;
+      return {
+        src: galleryImages[imageIndex],
+        label: imageIndex + 1
+      };
+    })
+    : [];
 
   return (
     <>
@@ -75,33 +85,47 @@ export default function HomePage() {
               Recorre nuestra galería con un vistazo rápido a las mejores imágenes del museo.
             </p>
           </div>
-          {currentImage ? (
+          {visibleImages.length > 0 ? (
             <div className="bg-slate-800/60 border border-slate-700 rounded-3xl p-6">
-              <div className="relative">
-                <img
-                  src={currentImage}
-                  alt={`Galería destacada ${currentSlide + 1}`}
-                  className="w-full h-[420px] object-cover rounded-2xl"
-                  loading="lazy"
-                />
-                <button
-                  type="button"
-                  onClick={handlePrevious}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
-                >
-                  Anterior
-                </button>
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
-                >
-                  Siguiente
-                </button>
+              <div className="flex items-center justify-between gap-4 mb-6">
+                <p className="text-slate-400 text-sm">
+                  Mostrando {visibleImages.length} de {totalSlides} imágenes
+                </p>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={handlePrevious}
+                    className="bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
+                  >
+                    Anterior
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    className="bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
+                  >
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {visibleImages.map((image, index) => (
+                  <div
+                    key={`${image.src}-${index}`}
+                    className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/60"
+                  >
+                    <img
+                      src={image.src}
+                      alt={`Galería destacada ${image.label}`}
+                      className="h-48 w-full object-cover transition duration-300 hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
               </div>
               <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <p className="text-slate-400 text-sm">
-                  Imagen {currentSlide + 1} de {totalSlides}
+                  Imagen inicial {currentSlide + 1} de {totalSlides}
                 </p>
                 <button
                   type="button"
