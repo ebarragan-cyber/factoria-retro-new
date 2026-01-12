@@ -247,19 +247,18 @@ export default function ContactoPage() {
         {/* Mapa */}
         <div className="mt-16 bg-slate-800/50 rounded-2xl p-8 border border-slate-700 backdrop-blur-sm">
           <h3 className="text-2xl font-bold mb-6 text-center text-white">Cómo Llegar</h3>
-          <div className="aspect-video w-full rounded-xl overflow-hidden bg-slate-700/50 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-16 h-16 text-slate-400 mx-auto mb-4" />
-              <p className="text-slate-400">Mapa interactivo próximamente</p>
-              <a
-                href="https://www.google.com/maps?q=C%2F+Parque+de+Caba%C3%B1eros,+Av.+del+Pinar,+3,+28924+Alcorc%C3%B3n,+Madrid"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-500 text-sm mt-2 hover:text-cyan-300 transition-colors"
-              >
-                C/ Parque de Cabañeros, Av. del Pinar, 3, 28924 Alcorcón, Madrid
-              </a>
-            </div>
+          <div className="aspect-video w-full rounded-xl overflow-hidden bg-slate-700/50">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.880064982906!2d-3.8079978!3d40.3450065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41893d0fd167bf%3A0x3210831643d6b8ac!2sFactoria%20Retro!5e0!3m2!1ses!2ses!4v1768229504464!5m2!1ses!2ses"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-full w-full"
+              title="Mapa de Factoria Retro"
+            ></iframe>
           </div>
           
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
