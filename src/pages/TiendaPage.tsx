@@ -37,9 +37,9 @@ export default function TiendaPage() {
                 <span className="text-xl font-bold text-cyan-400">149€</span>
                 <span className="text-slate-500 line-through text-sm">199€</span>
               </div>
-              <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm">
-                Añadir al Carrito
-              </button>
+              <p className="text-xs text-slate-400 text-center">
+                Disponible en catálogo. Consulta detalles en el local.
+              </p>
             </div>
 
             {/* Producto 2 - Mini Máquina Azul */}
@@ -67,9 +67,9 @@ export default function TiendaPage() {
                 <span className="text-xl font-bold text-cyan-400">149€</span>
                 <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">POPULAR</span>
               </div>
-              <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm">
-                Añadir al Carrito
-              </button>
+              <p className="text-xs text-slate-400 text-center">
+                Disponible en catálogo. Consulta detalles en el local.
+              </p>
             </div>
 
             {/* Producto 3 - Llavero */}
@@ -98,9 +98,9 @@ export default function TiendaPage() {
                 <span className="text-xl font-bold text-cyan-400">12€</span>
                 <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">NUEVO</span>
               </div>
-              <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm">
-                Añadir al Carrito
-              </button>
+              <p className="text-xs text-slate-400 text-center">
+                Disponible en catálogo. Consulta detalles en el local.
+              </p>
             </div>
           </div>
         </div>
@@ -141,23 +141,6 @@ export default function TiendaPage() {
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 rounded-xl p-6 border border-cyan-500 backdrop-blur-sm text-center">
-          <h3 className="text-xl font-bold mb-3 text-white">Newsletter</h3>
-          <p className="text-slate-300 mb-4 text-sm">
-            10% descuento en tu primera compra
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="tu@email.com"
-              className="flex-1 p-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:outline-none transition-colors"
-            />
-            <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
-              Suscribirse
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
