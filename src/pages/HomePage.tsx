@@ -86,7 +86,7 @@ export default function HomePage() {
             </p>
           </div>
           {visibleImages.length > 0 ? (
-            <div className="bg-slate-800/60 border border-slate-700 rounded-3xl p-6">
+            <div className="bg-slate-800/60 border border-slate-700 rounded-3xl p-8">
               <div className="flex items-center justify-between gap-4 mb-6">
                 <p className="text-slate-400 text-sm">
                   Mostrando {visibleImages.length} de {totalSlides} imágenes
@@ -112,21 +112,18 @@ export default function HomePage() {
                 {visibleImages.map((image, index) => (
                   <div
                     key={`${image.src}-${index}`}
-                    className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/60"
+                    className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/60 shadow-lg"
                   >
                     <img
                       src={image.src}
                       alt={`Galería destacada ${image.label}`}
-                      className="h-48 w-full object-cover transition duration-300 hover:scale-105"
+                      className="h-64 w-full object-cover transition duration-300 hover:scale-105"
                       loading="lazy"
                     />
                   </div>
                 ))}
               </div>
-              <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <p className="text-slate-400 text-sm">
-                  Imagen inicial {currentSlide + 1} de {totalSlides}
-                </p>
+              <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4">
                 <button
                   type="button"
                   onClick={() => {
