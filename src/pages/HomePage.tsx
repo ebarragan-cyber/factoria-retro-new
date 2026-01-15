@@ -86,25 +86,27 @@ export default function HomePage() {
             </p>
           </div>
           {visibleImages.length > 0 ? (
-            <div className="bg-slate-800/60 border border-slate-700 rounded-3xl p-8">
-              <div className="flex items-center justify-between gap-4 mb-6">
+            <div className="space-y-8">
+              <div className="flex items-center justify-between gap-4">
                 <p className="text-slate-400 text-sm">
                   Mostrando {visibleImages.length} de {totalSlides} imágenes
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                   <button
                     type="button"
                     onClick={handlePrevious}
-                    className="bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
+                    aria-label="Ver imágenes anteriores"
+                    className="h-12 w-12 rounded-full border border-slate-600 bg-slate-900/70 text-white text-xl hover:border-cyan-400 transition"
                   >
-                    Anterior
+                    ←
                   </button>
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="bg-slate-900/70 text-white px-4 py-2 rounded-full border border-slate-600 hover:border-cyan-400 transition"
+                    aria-label="Ver imágenes siguientes"
+                    className="h-12 w-12 rounded-full border border-slate-600 bg-slate-900/70 text-white text-xl hover:border-cyan-400 transition"
                   >
-                    Siguiente
+                    →
                   </button>
                 </div>
               </div>
@@ -123,7 +125,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4">
                 <button
                   type="button"
                   onClick={() => {
