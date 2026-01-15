@@ -87,10 +87,22 @@ export default function HomePage() {
           </div>
           {visibleImages.length > 0 ? (
             <div className="space-y-8">
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-slate-400 text-sm">
-                  Mostrando {visibleImages.length} de {totalSlides} imágenes
-                </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {visibleImages.map((image, index) => (
+                  <div
+                    key={`${image.src}-${index}`}
+                    className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/60 shadow-lg"
+                  >
+                    <img
+                      src={image.src}
+                      alt={`Galería destacada ${image.label}`}
+                      className="h-64 w-full object-cover transition duration-300 hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex gap-3">
                   <button
                     type="button"
@@ -109,23 +121,6 @@ export default function HomePage() {
                     →
                   </button>
                 </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {visibleImages.map((image, index) => (
-                  <div
-                    key={`${image.src}-${index}`}
-                    className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/60 shadow-lg"
-                  >
-                    <img
-                      src={image.src}
-                      alt={`Galería destacada ${image.label}`}
-                      className="h-64 w-full object-cover transition duration-300 hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4">
                 <button
                   type="button"
                   onClick={() => {
